@@ -38,6 +38,7 @@
   box-sizing: border-box;
   border-radius: 100px;
   background-color: transparent;
-  padding: 12px;
+  padding: 11px 14px;
+  cursor: pointer;
 
 }
