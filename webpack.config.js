@@ -40,11 +40,11 @@ module.exports = {
         }
         ]
     },
-    resolve: {
-        alias: {
-            images: path.resolve(__dirname, "images")
-        }
-    },
+    // resolve: {
+    //     alias: {
+    //         images: path.resolve(__dirname, "images")
+    //     }
+    // },
     devServer: {
         overlay: true
     },

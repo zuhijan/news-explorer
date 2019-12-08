@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,58 @@
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
-<body>
-  <header class="header">werq</header>
-  <main class="main">aa</main>
-  <footer class="footer">ss</footer>
+
+<body class="page">
+  <main class="main">
+    <section class="top">
+      <header class="header">
+        <p class="header__logo-text">NewsExplorer</p>
+        <div class="header__container">
+          <a class="header__link" href="#">Главная</a>
+          <a class="header__link" href="#">О проекте</a>
+          <button class="header__button">Авторизоваться</button>
+        </div>
+      </header>
+      <div class="search">
+        <div class="search__container">
+          <h1 class="search__title">Что в мире творится?</h1>
+          <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+          </p>
+          <div class="search__container-input">
+            <input class="search__input" type="text"  placeholder="Введите тему новости">
+            <button class="search__button">Искать</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="author">
+      <img src="<%=require('./images/foto.png')%>" alt="фото красавчика" class="author__foto">
+      <div class="author__container">
+        <h2 class="author__title">Об авторе</h2>
+        <p class="author__description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы
+          занимаетесь, какими технологиями разработки владеете.
+        </p>
+        <p class="author__description">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и
+          чем можете помочь потенциальным заказчикам.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2019 Supersite</p>
+    <nav class="footer__nav">
+      <a href="#" class="footer__link">Главная</a>
+      <a href="#" class="footer__link">О&nbsp;проекте</a>
+      <a href="#" class="footer__link">Яндекс.Практикум</a>
+    </nav>
+
+    <div class="footer__media">
+      <a href="#"><img src="<%=require('./images/gt.svg')%>" alt="github" class="footer__media-icon"></a>
+      <a href="#"><img src="<%=require('./images/fb.svg')%>" alt="" class="footer__media-icon"></a>
+    </div>
+
+  </footer>
   <script src='<%= htmlWebpackPlugin.files.chunks.main.entry %>'> </script>
 </body>
+
 </html>

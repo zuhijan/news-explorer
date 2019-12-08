@@ -1,0 +1,33 @@
+@import url('../vendor/normalize.css');
+@import url('header/header.css');
+@import url('search/search.css');
+@import url('author/author.css');
+@import url('footer/footer.css');
+
+
+@font-face {
+  src: url('../fonts/roboto-medium-webfont.woff');
+  font-family: 'Roboto-medium';
+}
+@font-face {
+  src: url('../fonts/roboto-regular-webfont.woff');
+  font-family: 'Roboto-regular';
+}
+@font-face {
+  src: url('../fonts/robotoslab-regular-webfont.woff');
+  font-family: 'Roboto Slab';
+}
+
+
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+/* .main {
+  margin: 0 auto;
+} */
+.top {
+  max-width: 1440px;
+  height: 576px;
+  background-image: url('../images/bg.png');
+}
