@@ -1,0 +1,30 @@
+.menu__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  font-family: "Roboto-medium";
+  margin-right: 32px;
+  /* border-bottom:  2px solid #FFFFFF;
+  padding: 26px; */
+}
+.menu__link_hover_white:hover {
+  color: #fff;
+}
+.menu__link_hover_black:hover {
+  color: #000;
+}
+.menu__link_linked_white {
+  color: #fff;
+}
+.menu__link_linked_black {
+  color: #000;
+}
+.header__button_white {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.header__button_black {
+  color: #000;
+  border: 1px solid #000;
+}

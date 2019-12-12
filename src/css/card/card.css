@@ -3,16 +3,13 @@
   width: 400px;
   height: 576px;
   border-radius: 16px;
-  background: #FFF;
+  background: #fff;
 }
 .card__foto {
-
   width: 400px;
   height: 272px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-
-
 }
 .card__block-description {
   padding: 20px 24px 24px;
@@ -24,32 +21,45 @@
   cursor: pointer;
 }
 .card__date {
-  font-family: 'Roboto-regular';
+  font-family: "Roboto-regular";
   font-size: 18px;
   line-height: 24px;
-  color: #B6BCBF;
+  color: #b6bcbf;
 }
 .card__title {
-  font-family: 'Roboto Slab';
+  font-family: "Roboto Slab";
   font-weight: normal;
   margin: 12px 0 16px;
   font-size: 26px;
   line-height: 30px;
-  color: #1A1B22;
+  color: #1a1b22;
 }
 .card__description {
-  font-family: 'Roboto-regular';
+  font-family: "Roboto-regular";
   font-size: 16px;
   line-height: 22px;
-  color: #1A1B22;
+  color: #1a1b22;
 }
 .card__source {
-  font-family: 'Roboto Slab';
+  font-family: "Roboto Slab";
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  color: #B6BCBF;
+  color: #b6bcbf;
   padding-top: 18px;
   font-weight: bold;
+}
+.card__key {
+  position: absolute;
+  font-family: 'Roboto-medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  top: 24px;
+  left: 24px;
+  background-color: #fff;
+  padding: 8px 11px;
+  border-radius: 10px;
 }

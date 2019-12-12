@@ -3,42 +3,42 @@
   justify-content: space-between;
   align-items: center;
   padding: 18px 104px 14px;
-  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-
+  box-shadow: inset 0px -1px 0px #D1D2D6;
 }
 
 .header__logo-text {
-  /* font-weight: bold; */
   font-size: 20px;
   line-height: 24px;
-  color: #FFF;
-  font-family: 'Roboto Slab';
-
+  font-family: "Roboto Slab";
+  justify-self: start;
 }
-.header__link {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  color: #B6BCBF;
-  font-family: 'Roboto-medium';
-  margin-right: 32px;
-  /* border-bottom:  2px solid #FFFFFF;
-  padding: 26px; */
-}
-.header__link:hover {
-  color: #FFF;
 
+.header__container {
+  display: flex;
+  align-items: center;
 }
 .header__button {
-  font-family: 'Roboto-medium';
+  max-height: 48px;
+  font-family: "Roboto-medium";
   font-size: 18px;
   line-height: 24px;
-  color: #FFF;
-  border: 1px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 100px;
   background-color: transparent;
-  padding: 11px 14px;
+  padding: 10px 14px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.header__button_white {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.header__button_black {
+  color: #000;
+  border: 1px solid #000;
+}
 
+.header__logo-text_wight {
+  color: #fff;
 }

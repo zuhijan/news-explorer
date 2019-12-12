@@ -1,9 +1,11 @@
 @import url('../vendor/normalize.css');
 @import url('header/header.css');
+@import url('menu/menu.css');
 @import url('search/search.css');
 @import url('author/author.css');
 @import url('results/results.css');
 @import url('card/card.css');
+@import url('saved/saved.css');
 @import url('footer/footer.css');
 
 
