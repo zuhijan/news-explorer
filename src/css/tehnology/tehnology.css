@@ -1,0 +1,31 @@
+.tehnology {
+  background: #f5f6f7;
+  padding: 80px 104px 88px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tehnology__title {
+  max-width: 305px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  align-self: flex-start;
+  margin: 0;
+}
+.tehnology__container {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+.tehnology__card-title {
+  font-family: "Roboto-regular";
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  margin-bottom: 23px;
+}

@@ -19,7 +19,7 @@ module.exports = {
       use: { loader: "babel-loader" },
       exclude: /node_modules/
     }, {
-      test: /\.(woff|woff2|ttf|otf|png|jpe?g|gif|svg)$/i,
+      test: /\.(woff|woff2|ttf|otf|png|jpe?g|gif|svg|ico)$/i,
       use: [{
         loader: 'file-loader',
         options: {
@@ -52,12 +52,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/pages/saved.html',
+      template: './src/saved/index.html',
       filename: 'saved.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/pages/about.html',
+      template: './src/about/index.html',
       filename: 'about.html'
     }),
     new OptimizeCssAssetsPlugin({
