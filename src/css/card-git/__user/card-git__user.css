@@ -7,3 +7,8 @@
   line-height: 30px;
 }
 
+@media (max-width: 1025px) {
+  .card-git__user {
+    font-size: 20px;
+  }
+}

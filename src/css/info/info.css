@@ -1,8 +1,18 @@
 @import url("__title/info__title.css");
 @import url("__text/info__text.css");
 
-
 .info {
   padding: 80px 104px 72px;
 }
 
+@media (max-width: 1025px) {
+  .info {
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .info {
+    padding: 16px;
+  }
+}

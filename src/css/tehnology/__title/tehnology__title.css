@@ -8,3 +8,11 @@
   align-self: flex-start;
   margin: 0;
 }
+
+@media (max-width: 1025px) {
+  .tehnology__title {
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
