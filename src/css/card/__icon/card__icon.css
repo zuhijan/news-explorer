@@ -1,0 +1,12 @@
+.card__icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+.card__icon_delete:hover path {
+  fill: #000;
+}
+.card__icon_mark:hover path {
+  stroke: #000;
+}

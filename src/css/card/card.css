@@ -1,3 +1,14 @@
+@import url("__foto/card__foto.css");
+@import url("__block-description/card__block-description.css");
+@import url("__icon/card__icon.css");
+@import url("__data/card__data.css");
+@import url("__title/card__title.css");
+@import url("__description/card__description.css");
+@import url("__source/card__source.css");
+@import url("__key/card__key.css");
+@import url("__auto/card__auto.css");
+
+
 .card {
   position: relative;
   width: 400px;
@@ -10,85 +21,9 @@
 .card:hover {
   box-shadow: 0px 10px 20px rgba(8, 29, 45, 0.1);
 }
-.card__foto {
-  width: 400px;
-  height: 272px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-}
-.card__block-description {
-  padding: 20px 24px 24px;
-}
-.card__icon {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  cursor: pointer;
-}
-.card__icon_delete:hover path {
-  fill: #000;
-}
-.card__icon_mark:hover path {
-  stroke: #000;
-}
-.card__date {
-  font-family: "Roboto-regular";
-  font-size: 18px;
-  line-height: 24px;
-  color: #b6bcbf;
-}
-.card__title {
-  font-family: "Roboto Slab";
-  font-weight: normal;
-  margin: 12px 0 16px;
-  font-size: 26px;
-  line-height: 30px;
-  color: #1a1b22;
-}
-.card__description {
-  font-family: "Roboto-regular";
-  font-size: 16px;
-  line-height: 22px;
-  color: #1a1b22;
-}
-.card__source {
-  font-family: "Roboto Slab";
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: #b6bcbf;
-  padding-top: 18px;
-  font-weight: bold;
-}
-.card__key {
-  position: absolute;
-  font-family: "Roboto-medium";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  top: 24px;
-  left: 24px;
-  background-color: #fff;
-  padding: 8px 11px;
-  border-radius: 10px;
-}
-.card__auto {
-  position: absolute;
-  top: 24px;
-  right: 69px;
-  font-family: "Roboto-medium";
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 24px;
-  border-radius: 10px;
-  padding: 8px 11px;
-  background-color: #fff;
-}
-.card__auto_no {
-  display: none;
-}
+
+
+
 .card__icon:hover ~ .card__auto_no {
   display: inline;
 }

@@ -1,3 +1,15 @@
+@import url("__comment/card-git__comment.css");
+@import url("__container-user/card-git__container-user.css");
+@import url("__data/card-git__data.css");
+@import url("__email/card-git__email.css");
+@import url("__foto/card-git__foto.css");
+@import url("__user/card-git__user.css");
+
+
+
+
+
+
 .card-git {
   min-width: 352px;
   height: 240px;
@@ -8,46 +20,5 @@
   border-radius: 16px;
   margin-right: 16px;
 }
-.card-git__data {
-  font-family: "Roboto-regular";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 22px;
-  color: #b6bcbf;
-}
 
-.card-git__container-user {
-  display: flex;
-  margin-top: 19px;
-}
-.card-git__user {
-  font-family: "Roboto Slab";
 
-  font-style: normal;
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 30px;
-}
-.card-git__email {
-  font-family: "Roboto-regular";
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 22px;
-  margin-bottom: 22px;
-}
-.card-git__foto {
-  width: 64px;
-  height: 64px;
-  margin: 0 16px 16px 0;
-}
-.card-git__comment {
-  font-family: "Roboto-regular";
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-}

@@ -1,31 +1,10 @@
+@import url("__title/results__title.css");
+@import url("__container/results__container.css");
+@import url("__button/results__button.css");
+
 .results {
   padding: 104px 80px;
-  background: #F5F6F7;
+  background: #f5f6f7;
   display: flex;
   flex-direction: column;
-}
-.results__title {
-  font-family: 'Roboto Slab';
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 46px;
-  color: #1A1B22;
-}
-.results__container {
-  display: flex;
-  justify-content: space-between;
-}
-.results__button {
-  font-family: 'Roboto-medium';
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  border-radius: 80px;
-  background-color: #FFF;
-  padding: 12px;
-  cursor: pointer;
-  padding: 20px 84px;
-  align-self: center;
-  margin-top: 82px;
 }

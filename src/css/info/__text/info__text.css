@@ -1,0 +1,11 @@
+.info__text {
+  max-width: 815px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Roboto-regular';
+  margin-bottom: 10px;
+}
+.info__text:last-of-type {
+  margin-bottom: 0;
+}

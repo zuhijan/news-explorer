@@ -1,0 +1,4 @@
+.github__container {
+  display: flex;
+  overflow: hidden;
+}

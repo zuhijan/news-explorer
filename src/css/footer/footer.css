@@ -1,28 +1,12 @@
+@import url("__copyright/footer__copyright.css");
+@import url("__nav/footer__nav.css");
+@import url("__link/footer__link.css");
+@import url("__media/footer__media.css");
+
 .footer {
   display: flex;
   justify-content: space-between;
   padding: 30px 104px 28px;
 }
-.footer__copyright {
-  font-family: 'Roboto-regular';
-  font-size: 16px;
-  line-height: 22px;
-  color: #B6BCBF;
-}
-.footer__nav {
-  display: flex;
-  justify-content: space-between;
-  flex-basis: 30%;
-}
-.footer__link {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  color: #1A1B22;
-}
-.footer__media {
-  display: flex;
-  flex-basis: 5%;
-  justify-content: space-between;
-}
+
+

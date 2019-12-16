@@ -1,36 +1,9 @@
-.saved__info-container {
-  padding: 40px 104px;
-}
-.saved__cardlist {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
-  grid-gap: 16px;
-  background: #f5f6f7;
-  padding: 62px 104px;
-}
-.saved__title {
-  font-family: "Roboto-regular";
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  color: rgba(26, 27, 34, 0.5);
-}
-.saved__description {
-  max-width: 530px;
-  font-family: "Roboto Slab";
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 46px;
-  margin-bottom: 30px;
-}
-.saved__keys {
-  font-family: "Roboto-regular";
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
+@import url("__info-container/saved__info-container.css");
+@import url("__cardlist/saved__cardlist.css");
+@import url("__title/saved__title.css");
+@import url("__description/saved__description.css");
+@import url("__keys/saved__keys.css");
 
-}
-.saved__keys_bold {
-  font-weight: bold;
-}
+
+
+

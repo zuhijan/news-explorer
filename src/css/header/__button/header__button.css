@@ -1,0 +1,21 @@
+.header__button {
+  max-height: 48px;
+  font-family: "Roboto-medium";
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 10px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.header__button_white {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.header__button_black {
+  color: #000;
+  border: 1px solid #000;
+}
