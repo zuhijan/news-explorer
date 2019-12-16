@@ -9,3 +9,13 @@
   padding: 18px 104px 14px;
   box-shadow: inset 0px -1px 0px #d1d2d6;
 }
+
+@media (max-width: 1025px) {
+  .header {
+  padding-right: 40px;
+  padding-left: 40px;
+
+  }
+}
+
+

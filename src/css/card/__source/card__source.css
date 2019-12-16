@@ -5,6 +5,12 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;
-  padding-top: 18px;
   font-weight: bold;
+  text-align: left;
 }
+
+/* @media (max-width: 890px) {
+  .card__source {
+
+  }
+} */

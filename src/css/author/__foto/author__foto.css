@@ -2,3 +2,24 @@
   margin-right: 56px;
 }
 
+@media (max-width: 1025px) {
+  .author__foto {
+    width: 232px;
+    height: 232px;
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 615px) {
+  .author__foto {
+    margin-right: 12px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .author__foto {
+    width: 272px;
+    height: 272px;
+  }
+}

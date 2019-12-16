@@ -2,9 +2,26 @@
 @import url("__foto/author__foto.css");
 @import url("__title/author__title.css");
 
-
-
 .author {
   display: flex;
   padding: 80px 104px;
+}
+
+@media (max-width: 1025px) {
+  .author {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .author {
+    padding: 32px 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .author {
+    flex-direction: column;
+  }
 }

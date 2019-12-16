@@ -1,4 +1,11 @@
 .results__container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 515px) {
+  .results__container {
+    flex-direction: column;
+  }
 }

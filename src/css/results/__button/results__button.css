@@ -1,14 +1,26 @@
 .results__button {
-  font-family: 'Roboto-medium';
+  font-family: "Roboto-medium";
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
   border-radius: 80px;
-  background-color: #FFF;
-  padding: 12px;
+  background-color: #fff;
   cursor: pointer;
   padding: 20px 84px;
   align-self: center;
   margin-top: 82px;
+}
+
+@media (max-width: 890px) {
+  .results__button {
+    margin-top: 32px;
+    padding: 15px 60px;
+  }
+}
+
+@media (max-width: 515px) {
+  .results__button {
+    margin-top: 15px;
+  }
 }

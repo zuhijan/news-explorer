@@ -1,4 +1,12 @@
 .search__container-input {
   position: relative;
   margin-top: 64px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 890px) {
+  .search__container-input {
+    margin-top: 48px;
+  margin-bottom: 48px;
+  }
 }

@@ -4,3 +4,9 @@
   line-height: 22px;
   color: #B6BCBF;
 }
+
+@media (max-width: 615px) {
+  .footer__copyright {
+    align-self: flex-start;
+  }
+}

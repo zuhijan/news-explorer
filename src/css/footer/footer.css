@@ -2,6 +2,7 @@
 @import url("__nav/footer__nav.css");
 @import url("__link/footer__link.css");
 @import url("__media/footer__media.css");
+@import url("__media-icon/footer__media-icon.css");
 
 .footer {
   display: flex;
@@ -9,4 +10,19 @@
   padding: 30px 104px 28px;
 }
 
+@media (max-width: 1025px) {
+  .footer {
+  padding-right: 40px;
+  padding-left: 40px;
 
+  }
+}
+
+@media (max-width: 615px) {
+  .footer {
+  flex-wrap: wrap-reverse;
+  padding: 20px 16px;
+
+
+  }
+}

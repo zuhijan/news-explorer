@@ -17,6 +17,8 @@
   background: #fff;
   cursor: pointer;
   box-shadow: 0px 1px 10px rgba(8, 29, 45, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 .card:hover {
   box-shadow: 0px 10px 20px rgba(8, 29, 45, 0.1);
@@ -28,3 +30,17 @@
   display: inline;
 }
 
+@media (max-width: 890px) {
+  .card {
+    width: 224px;
+    height: 420px;
+
+  }
+}
+
+@media (max-width: 515px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+}

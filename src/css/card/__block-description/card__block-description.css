@@ -1,3 +1,13 @@
 .card__block-description {
   padding: 20px 24px 24px;
+  height: 234px;
+  overflow: hidden;
+
+}
+
+@media (max-width: 890px) {
+  .card__block-description {
+    padding: 16px;
+
+  }
 }

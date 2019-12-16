@@ -3,8 +3,15 @@
   line-height: 24px;
   font-family: "Roboto Slab";
   justify-self: start;
+  margin-right: 16px;
 }
 
 .header__logo-text_wight {
   color: #fff;
+}
+
+@media (max-width: 515px) {
+  .header__logo-text {
+    font-size: 16px;
+  }
 }
