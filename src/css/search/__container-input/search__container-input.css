@@ -7,6 +7,13 @@
 @media (max-width: 890px) {
   .search__container-input {
     margin-top: 48px;
-  margin-bottom: 48px;
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 410px) {
+  .search__container-input {
+    margin-top: 122px;
+    margin-bottom: 0;
   }
 }

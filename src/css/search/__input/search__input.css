@@ -25,6 +25,6 @@
 
 @media (max-width: 515px) {
   .search__input {
-    width: 338px;
+    width: 100%;
   }
 }

@@ -11,5 +11,6 @@
   .search__title {
     font-size: 36px;
     line-height: 40px;
+    margin-top: 0;
   }
 }

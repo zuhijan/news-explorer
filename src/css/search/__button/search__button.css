@@ -25,8 +25,10 @@
     height: 56px;
   }
 }
-@media (max-width: 515px) {
+@media (max-width: 410px) {
   .search__button {
-    width: 120px;
+    width: 100%;
+    position: relative;
+    margin-top: 16px;
   }
 }
