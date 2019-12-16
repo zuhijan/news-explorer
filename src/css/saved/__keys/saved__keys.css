@@ -7,3 +7,15 @@
 .saved__keys_bold {
   font-weight: bold;
 }
+
+@media (max-width: 1025px) {
+  .saved__keys {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 515px) {
+  .saved__keys {
+    font-size: 18px;
+  }
+}
