@@ -2,6 +2,8 @@
 
 ## для проекта [news-explorer](http://news-explorer.ru/)
 
+DEMO: https://zuhijan.github.io/news-explorer/
+
 ### Используемые технологии
 
 HTML, CSS, JS, Webpack, npm.
