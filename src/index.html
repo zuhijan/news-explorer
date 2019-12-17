@@ -14,7 +14,11 @@
 </head>
 
 <body class="page">
-  <div class="popup popup_login popup_hidden">
+  <!-- <div class="overlay"></div> -->
+
+  <div id="popup__login" class="popup">
+    <div class="overlay"></div>
+
     <div class="popup__content">
       <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
         <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
@@ -31,10 +35,12 @@
         <span class="error-message"></span>
         <button type='button' class="popup__button" name="button">Войти</button>
       </form>
-      <p class="popup__desctipntion">или<a href="#" class="popup__link"> Зарегистрироваться</a></p>
+      <p class="popup__desctipntion">или<a id="popup__link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a></p>
     </div>
   </div>
-  <div class="popup popup_reg popup_hidden">
+  <div id="popup__reg" class="popup">
+    <div class="overlay"></div>
+
     <div class="popup__content">
       <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
         <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
@@ -54,10 +60,10 @@
         <span class="error-message"></span>
         <button type='button' class="popup__button" name="button">Зарегистрироваться</button>
       </form>
-      <p class="popup__desctipntion">или<a href="#" class="popup__link"> Войти</a></p>
+      <p class="popup__desctipntion">или<a href="#" id="popup__link-to-login" class="popup__link"> Войти</a></p>
     </div>
   </div>
-  <div class="popup popup_hidden">
+  <div class="popup popup__succes">
     <div class="popup__content ">
       <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
         <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
@@ -79,9 +85,10 @@
             <a class="menu__link menu__link_hover_white" href="about.html">О&nbsp;проекте</a>
             <a class="menu__link menu__link_hover_white" href="saved.html">Сохраненные&nbsp;статьи</a>
           </nav>
-          <button class="header__button header__button_white">Авторизоваться</button>
+          <button id="header__button_auto" class="header__button header__button_white">Авторизоваться</button>
         </div>
-        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__mobile-menu"><path fill="#fff" d="M4 8h16v2H4zM4 14h16v2H4z"/></svg>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__mobile-menu">
+          <path fill="#fff" d="M4 8h16v2H4zM4 14h16v2H4z" /></svg>
       </header>
       <div class="search">
         <div class="search__container">
