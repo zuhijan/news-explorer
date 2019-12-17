@@ -26,3 +26,16 @@
     line-height: 24px;
   }
 }
+
+@media (max-width: 550px) {
+  .header__button {
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 322px) {
+  .header__button {
+    padding: 10px 75px;
+    width: 268px;
+  }
+}

@@ -1,24 +1,6 @@
-// export default class Popup {
-//   constructor(popupLayer) {
-//     this.popup = popupLayer;
+import Component from '../../scripts/component';
 
-//     this.popup.addEventListener("click", event => {
-//       if (event.target.classList.contains("popup__close")) this.close();
-//     });
-//   }
-//   open() {
-//     this.popup.classList.add("popup_open");
-
-//   }
-//   close() {
-//     this.popup.classList.remove("popup_open");
-
-//   }
-// }
-
-import Component from './component';
-
-// import './popup.css';
+import './popup.css';
 
 export default class Popup extends Component {
     constructor(...args) {
@@ -26,6 +8,10 @@ export default class Popup extends Component {
 
         this.open = this.open.bind(this);
         this.close = this.close.bind(this);
+
+        this.domElement.addEventListener("click", event => {
+                if (event.target.classList.contains("popup__close")) this.close();
+              });
 
         if (this.deps.Overlay) {
             this.overlay = new this.deps.Overlay(

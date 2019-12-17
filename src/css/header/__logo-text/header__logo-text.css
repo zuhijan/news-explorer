@@ -10,8 +10,9 @@
   color: #fff;
 }
 
-@media (max-width: 515px) {
+@media (max-width: 550px) {
   .header__logo-text {
+    z-index: 110;
     font-size: 16px;
   }
 }

@@ -1,23 +1,16 @@
-import Popup from './popup';
+import Popup from '../css/popup/popup';
 import Overlay from '../css/overlay/overlay';
 import Button from './button';
-
-
-
-// const popupLogin = document.querySelector(".popup__login");
-// const popupReg = document.querySelector(".popup__reg");
-
-// const popupLoginClass = new Popup(popupLogin)
-// const popupRegClass = new Popup(popupReg)
 
 const buttonAutorization = document.getElementById("header__button_auto");
 const popupLogin = document.getElementById("popup__login");
 const popupReg = document.getElementById("popup__reg");
 const linkToReg = document.getElementById("popup__link-to-reg");
 const linkToLogin = document.getElementById("popup__link-to-login");
+const mobileMenu = document.getElementById("header__mobile-menu");
+const mobileMenuBack = document.getElementById("header__mobile-menu-back");
 
-
-
+const headerContainer = document.getElementById("header__container");
 
 console.log(buttonAutorization);
 
@@ -48,20 +41,18 @@ new Button(linkToLogin, {
   },
 });
 
-// page.addEventListener("click", () => {
-//   if (event.target.classList.contains("header__button_auto")) {
-//     console.log("popup-login open")
-//     popupLoginClass.open();
-//     console.log(popupLoginClass)
-
-//   }
-//   if (event.target.classList.contains("popup__link_reg")) {
-//     popupLoginClass.close();
-//     popupRegClass.open();
-//   }
-//   if (event.target.classList.contains("popup__link_login")) {
-//     popupLoginClass.open();
-//     popupRegClass.close();
-//   }
-// })
+new Button(mobileMenu, {
+  click: () => {
+    mobileMenu.classList.remove("header__mobile-menu_visible")
+    mobileMenuBack.classList.add("header__mobile-menu_visible")
+    headerContainer.classList.remove("header__container_hide");
+  },
+});
+new Button(mobileMenuBack, {
+  click: () => {
+    mobileMenuBack.classList.remove("header__mobile-menu_visible")
+    mobileMenu.classList.add("header__mobile-menu_visible")
+    headerContainer.classList.add("header__container_hide");
+  },
+});
 

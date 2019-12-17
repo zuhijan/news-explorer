@@ -5,7 +5,23 @@
 
 @media (max-width: 550px) {
   .header__container {
-    display: none;
-    /* outline: 1px red solid; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+    margin-top: 26px;
   }
+
+  .header__container_hide {
+    display: none;
+  }
+}
+
+@media (max-width: 415px) {
+  .header__container {
+    align-items: flex-start;
+
+  }
+
 }

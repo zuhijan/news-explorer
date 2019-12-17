@@ -3,8 +3,8 @@
 @import url("__button/header__button.css");
 @import url("__mobile-menu/header__mobile-menu.css");
 
-
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,18 +14,22 @@
 
 @media (max-width: 1025px) {
   .header {
-  padding-right: 40px;
-  padding-left: 40px;
-
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
-
 
 @media (max-width: 615px) {
   .header {
-  padding: 16px;
-
-
+    padding: 16px;
   }
 }
-
+@media (max-width: 550px) {
+  .header {
+    box-shadow: none;
+    flex-wrap: wrap;
+  }
+  .header_black {
+    background-color: #1a1b22;
+  }
+}

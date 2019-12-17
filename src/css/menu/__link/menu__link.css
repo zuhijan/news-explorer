@@ -26,3 +26,9 @@
     line-height: 24px;
   }
 }
+
+@media (max-width: 550px) {
+  .menu__link {
+    margin-bottom: 20px;
+  }
+}

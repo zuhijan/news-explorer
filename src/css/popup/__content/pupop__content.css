@@ -18,7 +18,9 @@
 
   opacity: 0;
   transform: translateX(-50%) scale(0.8);
-  transition: transform 0.2s, opacity 0.3s;
+  transition: transform 0.2s;
+  /* transition: transform 0.2s, opacity 0.3s; */
+
 }
 .popup_open {
   pointer-events: auto;
@@ -27,4 +29,11 @@
 .popup_open .popup__content {
   opacity: 1;
   transform: translateX(-50%);
+}
+
+@media (max-width: 550px) {
+  .popup__content {
+    top: 56px;
+    min-width: 320px;
+  }
 }
