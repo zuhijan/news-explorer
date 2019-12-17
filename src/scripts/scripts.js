@@ -12,8 +12,6 @@ const mobileMenuBack = document.getElementById("header__mobile-menu-back");
 
 const headerContainer = document.getElementById("header__container");
 
-console.log(buttonAutorization);
-
 const login = new Popup(popupLogin, {}, {
   Overlay,
 });
