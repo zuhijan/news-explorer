@@ -2,6 +2,10 @@
 @import url("__text/info__text.css");
 
 .info {
+  max-width: 1232px;
+  min-width: 288px;
+
+  margin: 0 auto;
   padding: 80px 104px 72px;
 }
 

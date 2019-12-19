@@ -25,15 +25,10 @@
   font-family: "Roboto Slab";
 }
 
-.page {
-  max-width: 1440px;
-  min-width: 320px;
-  margin: 0 auto;
+body {
   font-family: "CieSans", "Arial", "Helvetica CY", "Comic Sans MS";
 }
 .top {
   background-image: url("../images/bg.png");
   background-size: cover;
-}
-@media (max-width: 1025px) {
 }

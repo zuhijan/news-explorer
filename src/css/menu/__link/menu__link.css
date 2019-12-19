@@ -14,9 +14,13 @@
 }
 .menu__link_linked_white {
   color: #fff;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #fff;
 }
 .menu__link_linked_black {
   color: #000;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #000;
 }
 
 @media (max-width: 890px) {
@@ -27,6 +31,16 @@
   }
 }
 
+@media (max-width: 750px) {
+  .menu__link_linked_white {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .menu__link_linked_black {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
 @media (max-width: 550px) {
   .menu__link {
     margin-bottom: 20px;

@@ -4,6 +4,6 @@
 @import url("__description/saved__description.css");
 @import url("__keys/saved__keys.css");
 
-
-
-
+.saved__content {
+  background: #f5f6f7;
+}

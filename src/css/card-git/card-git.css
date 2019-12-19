@@ -6,7 +6,7 @@
 @import url("__user/card-git__user.css");
 
 .card-git {
-  min-width: 352px;
+  width: 352px;
   height: 240px;
   padding: 24px;
   background-color: #fff;
@@ -31,3 +31,4 @@
     height: 232px;
   }
 }
+

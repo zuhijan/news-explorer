@@ -10,6 +10,12 @@
   padding: 20px 84px;
   align-self: center;
   margin-top: 82px;
+  transition: background-color 0.2s ease-in-out;
+
+}
+.results__button:hover {
+  background-color: #E6E8EB;;
+
 }
 
 @media (max-width: 890px) {

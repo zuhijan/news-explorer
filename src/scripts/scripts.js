@@ -54,3 +54,17 @@ new Button(mobileMenuBack, {
   },
 });
 
+
+import Swiper from 'swiper';
+// const Swiper = require('swiper');
+
+
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  freeMode: true,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+});

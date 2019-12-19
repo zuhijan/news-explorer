@@ -3,21 +3,29 @@
 @import url("__button/results__button.css");
 
 .results {
-  padding: 104px 80px;
+
   background: #f5f6f7;
+
+}
+.results__content {
+  max-width: 1232px;
+  min-width: 288px;
+
+  margin: 0 auto;
+  padding: 104px 80px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}
 
+}
 @media (max-width: 1025px) {
-  .results {
+  .results__content {
   padding: 40px;
   }
 }
 
 @media (max-width: 615px) {
-  .results {
+  .results__content {
   padding: 32px 16px;
 
 

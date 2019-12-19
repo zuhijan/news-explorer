@@ -10,6 +10,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .header__button_white {
   color: #fff;
@@ -27,15 +28,8 @@
   }
 }
 
-@media (max-width: 550px) {
-  .header__button {
-    padding: 10px 35px;
-  }
-}
-
 @media (max-width: 322px) {
   .header__button {
-    padding: 10px 75px;
     width: 268px;
   }
 }

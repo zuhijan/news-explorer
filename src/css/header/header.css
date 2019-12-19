@@ -4,6 +4,9 @@
 @import url("__mobile-menu/header__mobile-menu.css");
 
 .header {
+  max-width: 1232px;
+  min-width: 288px;
+  margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: space-between;

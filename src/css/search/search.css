@@ -5,6 +5,10 @@
 @import url("__button/search__button.css");
 
 .search {
+  max-width: 1408px;
+  min-width: 288px;
+
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -14,7 +14,9 @@
 .search__input::placeholder {
   color: #b6bcbf;
 }
-
+.search__input:focus {
+  border: 2px solid #347EFF;
+}
 @media (max-width: 890px) {
   .search__input {
     width: 448px;

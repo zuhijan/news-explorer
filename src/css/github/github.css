@@ -5,6 +5,12 @@
 
 .github {
   background-color: #f5f6f7;
+}
+.github__content {
+  max-width: 1360px;
+  min-width: 288px;
+
+  margin: 0 auto;
   padding: 40px;
 }
 
