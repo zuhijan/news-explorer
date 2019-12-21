@@ -17,22 +17,40 @@ module.exports = {
     rules: [{
       test: /\.js$/,
       use: { loader: "babel-loader" },
-      exclude: /node_modules/
-    }, {
-      test: /\.(woff|woff2|ttf|otf|png|jpe?g|gif|svg|ico)$/i,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
-        }
-      },
-      {
-        loader: 'image-webpack-loader',
-        options: {
-          bypassOnDebug: true,
-          disable: true,
-        }
-      }]
+      exclude: /node_modules/,
+
+    },
+    {
+      test: /\.(woff|woff2|ttf|otf)$/i,
+      loader: 'file-loader?name=./vendor/[name].[ext]'
+    },
+    {
+      test: /\.(png|jpe?g|gif|svg|ico)$/i,
+      use: [
+        'file-loader?name=./images/[name].[ext]',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            mozjpeg: {
+              progressive: true,
+              quality: 90
+            }, // optipng.enabled: false will disable optipng
+            optipng: {
+              enabled: false,
+            },
+            pngquant: {
+              quality: [0.75, 0.90],
+              speed: 4
+            },
+            gifsicle: {
+              interlaced: false,
+            }, // the webp option will enable WEBP
+            webp: {
+              quality: 90
+            }
+          }
+        },
+      ],
     },
     {
       test: /\.css$/,
@@ -44,7 +62,9 @@ module.exports = {
     overlay: true
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'style.[contenthash].css' }),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css',
+    }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',

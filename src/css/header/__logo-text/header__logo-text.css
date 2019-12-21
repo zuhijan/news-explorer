@@ -1,7 +1,7 @@
 .header__logo-text {
   font-size: 20px;
   line-height: 24px;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", "Helvetica CY";
   justify-self: start;
   margin-right: 16px;
 }

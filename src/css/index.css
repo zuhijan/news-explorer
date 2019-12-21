@@ -13,21 +13,18 @@
 @import url("footer/footer.css");
 
 @font-face {
-  src: url("../fonts/roboto-medium-webfont.woff");
+  src: url("../vendor/fonts/roboto-medium-webfont.woff");
   font-family: "Roboto-medium";
 }
 @font-face {
-  src: url("../fonts/roboto-regular-webfont.woff");
+  src: url("../vendor/fonts/roboto-regular-webfont.woff");
   font-family: "Roboto-regular";
 }
 @font-face {
-  src: url("../fonts/robotoslab-regular-webfont.woff");
+  src: url("../vendor/fonts/robotoslab-regular-webfont.woff");
   font-family: "Roboto Slab";
 }
 
-body {
-  font-family: "CieSans", "Arial", "Helvetica CY", "Comic Sans MS";
-}
 .top {
   background-image: url("../images/bg.png");
   background-size: cover;

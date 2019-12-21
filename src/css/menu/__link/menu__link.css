@@ -3,7 +3,7 @@
   font-size: 18px;
   line-height: 24px;
   color: #b6bcbf;
-  font-family: "Roboto-medium";
+  font-family: "Roboto-medium", "Arial";
   margin-right: 32px;
 }
 .menu__link_hover_white:hover {

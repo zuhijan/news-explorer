@@ -3,9 +3,7 @@
 @import url("__button/results__button.css");
 
 .results {
-
   background: #f5f6f7;
-
 }
 .results__content {
   max-width: 1232px;
@@ -16,18 +14,15 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
 }
 @media (max-width: 1025px) {
   .results__content {
-  padding: 40px;
+    padding: 40px;
   }
 }
 
 @media (max-width: 615px) {
   .results__content {
-  padding: 32px 16px;
-
-
+    padding: 32px 16px;
   }
 }
