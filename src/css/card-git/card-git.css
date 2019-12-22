@@ -4,9 +4,11 @@
 @import url("__email/card-git__email.css");
 @import url("__photo/card-git__photo.css");
 @import url("__user/card-git__user.css");
+@import url("__container-user-name/card-git__container-user-name.css");
+
 
 .card-git {
-  width: 352px;
+  min-width: 352px;
   height: 240px;
   padding: 24px;
   background-color: #fff;

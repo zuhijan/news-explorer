@@ -70,8 +70,17 @@ new Button(mobileMenuBack, {
 //   },
 // });
 
-let flkty = new Flickity( sliderCarousel, {
-  // options
-  cellAlign: 'left',
-  contain: true
-});
+// import Flickity from 'flickity';
+
+// console.log(sliderCarousel)
+// let flkty = new Flickity( sliderCarousel, {
+//   // options
+//   cellAlign: 'left',
+//   // // contain: true,
+//   wrapAround: true,
+//   freeScroll: true
+// });
+
+// import Glide from '@glidejs/glide'
+
+// new Glide('.glide').mount()
