@@ -7,6 +7,7 @@
   line-height: 46px;
   margin-top: 32px;
   margin-bottom: 64px;
+  margin-left: 104px;
 }
 
 @media (max-width: 1025px) {
@@ -16,6 +17,8 @@
     font-size: 30px;
     line-height: 34px;
     margin-bottom: 32px;
+    margin-left: 40px;
+
   }
 }
 
@@ -23,5 +26,7 @@
   .github__title {
     margin-top: 0;
     margin-bottom: 16px;
+    margin-left: 16px;
+
   }
 }

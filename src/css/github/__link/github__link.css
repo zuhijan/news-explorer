@@ -6,11 +6,23 @@
   font-size: 18px;
   line-height: 24px;
   margin-top: 45px;
+  margin-right: 104px;
 }
 .github__link_mobile {
   display: none;
 }
 
+@media (max-width: 1025px) {
+  .github__link {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .github__link {
+    margin-right: 16px;
+  }
+}
 @media (max-width: 321px) {
   .github__link_mobile {
     display: block;
