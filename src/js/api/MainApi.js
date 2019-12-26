@@ -14,7 +14,6 @@ export default class MainApi {
     return fetch(`${this.baseUrl}/users/me`, {
       headers: this.headers,
       credentials: 'include',
-      // withCredentials: true
     })
       .then(res => this.getResponseJson(res)
       )

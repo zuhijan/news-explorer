@@ -12,6 +12,8 @@
   <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon" />
 
 </head>
+<body class="page">
+
 <div id="login" class="popup">
   <div class="overlay"></div>
 
@@ -24,12 +26,16 @@
     <h3 class="popup__title">Вход</h3>
     <form class="popup__form" name="login">
       <p class="popup__subtitle">Email</p>
-      <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
-      <span class="error-message "></span>
+      <div class="popup__container-input">
+        <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
+        <span class="error-message error-message_email"></span>
+      </div>
       <p class="popup__subtitle">Пароль</p>
-      <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
-      <span class="error-message"></span>
-      <button id="login-button" type='button' class="popup__button" name="button">Войти</button>
+      <div class="popup__container-input">
+        <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
+        <span class="error-message error-message_password"></span>
+      </div>
+      <button id="login-button" type='button' class="popup__button" disabled name="button">Войти</button>
     </form>
     <p class="popup__desctipntion">или<a id="link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
     </p>
@@ -47,14 +53,20 @@
     <h3 class="popup__title">Регистрация</h3>
     <form class="popup__form" name="logup">
       <p class="popup__subtitle">Email</p>
-      <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
-      <span class="error-message "></span>
+      <div class="popup__container-input">
+        <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
+        <span class="error-message"></span>
+      </div>
       <p class="popup__subtitle">Пароль</p>
-      <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
-      <span class="error-message"></span>
+      <div class="popup__container-input">
+        <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
+        <span class="error-message"></span>
+      </div>
       <p class="popup__subtitle">Имя</p>
-      <input type="text" name="name" required class="popup__input" placeholder="Введите своё имя">
-      <span class="error-message"></span>
+      <div class="popup__container-input">
+        <input type="text" name="name" required class="popup__input" placeholder="Введите своё имя">
+        <span class="error-message"></span>
+      </div>
       <button id="logup-button" type='button' class="popup__button" name="button">Зарегистрироваться</button>
     </form>
     <p class="popup__desctipntion">или<a href="#" id="link-to-login" class="popup__link"> Войти</a></p>

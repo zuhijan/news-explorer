@@ -7,7 +7,6 @@
   line-height: 17px;
   box-sizing: border-box;
   padding: 5px 0;
-  margin-bottom: 24px;
 }
 .popup__input:last-of-type {
   margin-bottom: 0;
@@ -16,4 +15,7 @@
 .popup__input:focus {
   border-bottom: 1px solid #347EFF;
 
+}
+.popup__input_invalidate:invalid {
+  border-bottom: 1px solid red;
 }
