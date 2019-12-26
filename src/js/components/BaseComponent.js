@@ -1,4 +1,4 @@
-export default class Component {
+export default class BaseComponent {
   constructor(domElement, mapEventsToHandlers = {}, deps = {}) {
       this.domElement = domElement;
       this.deps = deps;

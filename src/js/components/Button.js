@@ -1,4 +1,4 @@
-import Component from './component';
+import Component from './BaseComponent';
 
 export default class Button extends Component {
 

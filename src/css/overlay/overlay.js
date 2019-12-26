@@ -1,8 +1,8 @@
-import Component from '../../scripts/component';
+import BaseComponent from '../../js/components/BaseComponent';
 
 import './overlay.css';
 
-export default class Overlay extends Component {
+export default class Overlay extends BaseComponent {
     constructor(...args) {
         super(...args);
 

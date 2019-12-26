@@ -1,8 +1,8 @@
-import Component from '../../scripts/component';
+import BaseComponent from './BaseComponent';
 
-import './popup.css';
+import '../../css/popup/popup.css';
 
-export default class Popup extends Component {
+export default class Popup extends BaseComponent {
     constructor(...args) {
         super(...args);
 

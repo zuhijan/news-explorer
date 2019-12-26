@@ -12,7 +12,7 @@
   <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon" />
 
 </head>
-<div id="popup__login" class="popup">
+<div id="login" class="popup">
   <div class="overlay"></div>
 
   <div class="popup__content">
@@ -29,13 +29,13 @@
       <p class="popup__subtitle">Пароль</p>
       <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
       <span class="error-message"></span>
-      <button type='button' class="popup__button" name="button">Войти</button>
+      <button id="login-button" type='button' class="popup__button" name="button">Войти</button>
     </form>
-    <p class="popup__desctipntion">или<a id="popup__link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
+    <p class="popup__desctipntion">или<a id="link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
     </p>
   </div>
 </div>
-<div id="popup__reg" class="popup">
+<div id="registration" class="popup">
   <div class="overlay"></div>
 
   <div class="popup__content">
@@ -45,7 +45,7 @@
       <path d="M18.13 20l-8.82 8.822 2.356 2.357 10.472-10.472a1 1 0 000-1.414L11.666 8.82 9.31 11.178 18.131 20z"
         fill="#fff" /></svg>
     <h3 class="popup__title">Регистрация</h3>
-    <form class="popup__form" name="login">
+    <form class="popup__form" name="logup">
       <p class="popup__subtitle">Email</p>
       <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
       <span class="error-message "></span>
@@ -55,9 +55,9 @@
       <p class="popup__subtitle">Имя</p>
       <input type="text" name="name" required class="popup__input" placeholder="Введите своё имя">
       <span class="error-message"></span>
-      <button type='button' class="popup__button" name="button">Зарегистрироваться</button>
+      <button id="logup-button" type='button' class="popup__button" name="button">Зарегистрироваться</button>
     </form>
-    <p class="popup__desctipntion">или<a href="#" id="popup__link-to-login" class="popup__link"> Войти</a></p>
+    <p class="popup__desctipntion">или<a href="#" id="link-to-login" class="popup__link"> Войти</a></p>
   </div>
 </div>
 <div class="popup popup__succes">
@@ -76,18 +76,18 @@
   <section class="top">
     <header class="header header_black">
       <a href="index.html" class="header__logo-text header__logo-text_wight">NewsExplorer</a>
-      <div id="header__container" class="header__container header__container_hide">
+      <div id="container-header" class="header__container header__container_hide">
         <nav class="menu">
           <a class="menu__link menu__link_linked_white" href="index.html">Главная</a>
           <a class="menu__link menu__link_hover_white" href="about.html">О&nbsp;проекте</a>
           <a class="menu__link menu__link_hover_white" href="saved.html">Сохраненные&nbsp;статьи</a>
         </nav>
-        <button id="header__button_auto" class="header__button header__button_white">Авторизоваться</button>
+        <button id="button-header" class="header__button header__button_white">Авторизоваться</button>
       </div>
-      <svg id="header__mobile-menu" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
+      <svg id="mobile-menu" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
         class="header__mobile-menu header__mobile-menu_visible">
         <path fill="#fff" d="M4 8h16v2H4zM4 14h16v2H4z" /></svg>
-      <svg id="header__mobile-menu-back" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
+      <svg id="mobile-menu-back" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
         class="header__mobile-menu">
         <path d="M13.414 12l5.293 5.293-1.414 1.414-6-6a1 1 0 010-1.414l6-6 1.414 1.414L13.414 12z" fill="#fff" />
         <path d="M10.879 12l-5.293 5.293L7 18.707l6-6a1 1 0 000-1.414l-6-6-1.414 1.414L10.879 12z" fill="#fff" /></svg>
