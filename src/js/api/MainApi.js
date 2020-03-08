@@ -74,5 +74,12 @@ export default class MainApi {
         password: password
       })
     })
+      .then(res =>  {
+        if (res.ok) {
+          return res;
+        } else {
+          return Promise.reject(res.status);
+        }
+      })
   }
 }
