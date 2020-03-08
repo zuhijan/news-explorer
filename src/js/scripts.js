@@ -16,7 +16,6 @@ const linkToLogin = document.getElementById("link-to-login");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuBack = document.getElementById("mobile-menu-back");
 const headerContainer = document.getElementById("container-header");
-// const sliderCarousel = document.getElementById("slider-carousel");
 const buttonLogUp = document.getElementById("logup-button");
 const buttonLogIn = document.getElementById("login-button");
 
@@ -37,68 +36,87 @@ const options = {
     "Content-Type": "application/json"
   }
 }
+
 //функция валидации инпутов
-function validate(event) {
-  // event.preventDefault();
-  const errorElement = event.target.nextElementSibling
-  if (isEmpty(event.target)) {
-    errorElement.textContent = 'Это обязательное поле';
-    event.target.classList.add('popup__input_invalidate');
-    return false
-  }
-  if (isWrongLength(event.target)) {
-    errorElement.textContent = 'Должно быть от 2 до 30 символов';
-    event.target.classList.add('popup__input_invalidate');
-    buttonLogIn.classList.remove('popup__button_active');
-    buttonLogIn.setAttribute('disabled', true);
-    return false
-  }
-  if (isNotEmail(event.target)) {
-    errorElement.textContent = 'Некорректный email';
-    event.target.classList.add('popup__input_invalidate');
-    buttonLogIn.classList.remove('popup__button_active');
-    buttonLogIn.setAttribute('disabled', true);
-    return false
-  }
-  if (isWrongPassword(event.target)) {
-    errorElement.textContent = 'Пароль должен быть от 8 до 30 символов';
-    event.target.classList.add('popup__input_invalidate');
-    buttonLogIn.classList.remove('popup__button_active');
-    buttonLogIn.setAttribute('disabled', true);
-    return false
-  } else {
-    errorElement.textContent = '';
-    validateForm(formLogIn)
-  }
-};
-//функция валидации форм
-function validateForm(form) {
-  form.forEach((input) => {
-    if (isEmpty(input) && isWrongLength(input) && isNotEmail(input) && isWrongPassword(input)) {
-      form.element.button.classList.remove('popup__button_active');
-      form.element.button.setAttribute('disabled', true);
-      return false
-    }
-  })
-  form.element.button.classList.add('popup__button_active');
-  form.element.button.setAttribute('disabled', false);
+function resetError(element) {
+  element.classList.remove('popup__input_invalidate');
+  element.textContent = '';
 }
 
-//объявление классов
+function activateError(element, text) {
+  element.textContent = text;
+  element.classList.add('popup__input_invalidate');
+}
+
+function validate(event) {
+  const errorElement = event.target.nextElementSibling;
+  if (isEmpty(event.target)) {
+    activateError(errorElement, 'Это обязательное поле');
+
+    return false
+  } else if (isWrongLength(event.target)) {
+    activateError(errorElement, 'Должно быть от 2 до 30 символов');
+
+    return false
+  } else if (isNotEmail(event.target)) {
+    activateError(errorElement, 'Некорректный email');
+
+    return false
+  } else if (isWrongPassword(event.target)) {
+    activateError(errorElement, 'Пароль должен быть от 8 до 30 символов');
+
+    return false
+  } else {
+    resetError(errorElement);
+  }
+  return true;
+}
+
+function validateForm(event) {
+  const form = event.currentTarget;
+  const inputs = Array.from(form.elements);
+  let isValidForm = true;
+
+  inputs.forEach((elem) => {
+    if (elem.name !== 'button') {
+      if (isEmpty(elem)) {
+        isValidForm = false;
+        return false;
+      } else if (isWrongLength(elem)) {
+        isValidForm = false;
+        return false;
+      } else if (isNotEmail(elem)) {
+        isValidForm = false;
+        return false;
+      } else if (isWrongPassword(elem)) {
+        isValidForm = false;
+        return false;
+      }
+    }
+  });
+  if (isValidForm) {
+    form.elements.button.classList.add('popup__button_active');
+    form.elements.button.removeAttribute('disabled');
+  } else {
+    form.elements.button.classList.remove('popup__button_active');
+    form.elements.button.setAttribute('disabled', true);
+  }
+};
+
+// объявление классов
 const login = new Popup(popupLogin, {}, {
   Overlay,
 });
 const reg = new Popup(popupReg, {}, {
   Overlay,
 });
-const api = new MainApi(options)
-const { isEmpty, isWrongLength, isNotEmail, isWrongPassword } = new Validation();
+// const api = new MainApi(options)
+const {isEmpty, isWrongLength, isNotEmail, isWrongPassword} = new Validation();
 
 //исполняющий код
 new Button(buttonAutorization, {
   click: () => {
     login.open();
-    validateForm(formLogIn)
   },
 });
 
@@ -123,6 +141,7 @@ new Button(mobileMenu, {
     headerContainer.classList.remove("header__container_hide");
   },
 });
+
 new Button(mobileMenuBack, {
   click: () => {
     mobileMenuBack.classList.remove("header__mobile-menu_visible")
@@ -131,18 +150,18 @@ new Button(mobileMenuBack, {
   },
 });
 
-new Button(buttonLogUp, {
-  click: () => {
-    api.postSignUp(emailLogUp.value, passLogUp.value, nameLogUp.value)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(`что-то пошло не так: ${err.message}`);
-        console.log(err);
-      })
-  }
-})
+// new Button(buttonLogUp, {
+//   click: () => {
+//     api.postSignUp(emailLogUp.value, passLogUp.value, nameLogUp.value)
+//       .then((res) => {
+//         console.log(res);
+//       })
+//       .catch((err) => {
+//         console.log(`что-то пошло не так: ${err.message}`);
+//         console.log(err);
+//       })
+//   }
+// })
 
 new Button(buttonLogIn, {
   click: () => {
@@ -161,39 +180,35 @@ new Button(buttonLogIn, {
   }
 })
 
-new Button(buttonLogIn, {
-  click: () => {
-    console.log(passLogIn.value);
-
-    api.getUserInfo()
-      .then((res) => console.log(res))
-      .catch((err) => { `${err} + ${err.message}` })
-      .catch((err) => {
-        console.log(`что-то пошло не так: ${err.message}`);
-        console.log(err);
-
-      })
-  }
-});
-
-
+// new Button(buttonLogIn, {
+//   click: () => {
+//     console.log(passLogIn.value);
+//
+//     api.getUserInfo()
+//       .then((res) => console.log(res))
+//       .catch((err) => { `${err} + ${err.message}` })
+//       .catch((err) => {
+//         console.log(`что-то пошло не так: ${err.message}`);
+//         console.log(err);
+//
+//       })
+//   }
+// });
 
 
-// emailLogIn.addEventListener("input", validate);
-// emailLogUp.addEventListener("input", validate);
-// passLogIn.addEventListener("input", validate);
-// passLogUp.addEventListener("input", validate);
-// nameLogUp.addEventListener("input", validate);
+emailLogIn.addEventListener("input", validate);
+emailLogUp.addEventListener("input", validate);
+passLogIn.addEventListener("input", validate);
+passLogUp.addEventListener("input", validate);
+nameLogUp.addEventListener("input", validate);
 
-// formLogUp.addEventListener("input", validate);
-// formLogIn.addEventListener("input", validate);
+// new Form(formLogUp, {
+//   input: validate,
+// })
 
 
-new Form(formLogUp, {
-  input: validate,
-})
 new Form(formLogIn, {
-  input: validate,
+  input: validateForm,
 })
 // new Form(page, {
 //   popupOpen: function () {
@@ -205,31 +220,4 @@ new Form(formLogIn, {
 // document.cookie="foo=bar";
 // console.log(`куки: ${document.cookie}`);
 
-// import Swiper from 'swiper';
-// // const Swiper = require('swiper');
 
-
-// const swiper = new Swiper('.swiper-container', {
-//   // slidesPerView: 5,
-//   // spaceBetween: 30,
-//   // freeMode: true,
-//   pagination: {
-//     el: '.swiper-pagination',
-//     // type: 'bullets',
-//   },
-// });
-
-// import Flickity from 'flickity';
-
-// console.log(sliderCarousel)
-// let flkty = new Flickity( sliderCarousel, {
-//   // options
-//   cellAlign: 'left',
-//   // // contain: true,
-//   wrapAround: true,
-//   freeScroll: true
-// });
-
-// import Glide from '@glidejs/glide'
-
-// new Glide('.glide').mount()
