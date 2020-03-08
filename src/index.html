@@ -92,9 +92,14 @@
       <div id="container-header" class="header__container header__container_hide">
         <nav class="menu">
           <a class="menu__link menu__link_linked_white" href="index.html">Главная</a>
-          <a class="menu__link menu__link_hover_white" href="saved.html">Сохраненные&nbsp;статьи</a>
+          <a id="menu-link" class="menu__link menu__link_hover_white menu__link_hide" href="saved.html">Сохраненные&nbsp;статьи</a>
         </nav>
-        <button id="button-header" class="header__button header__button_white">Авторизоваться</button>
+        <button id="button-header-login" class="header__button header__button_white">Авторизоваться</button>
+        <button id="button-header-logout" class="header__button header__button_white header__button_hide"> <p id="button-header__name">ВходВыполнен</p>
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 6H6v12h4v2H6a2 2 0 01-2-2V6a2 2 0 012-2h4v2zm7.586 7l-4.293 4.134 1.414 1.362 6.707-6.459-6.707-6.459-1.414 1.362 4.293 4.134H8V13h9.586z" fill="#fff"/>
+          </svg>
+        </button>
       </div>
       <svg id="mobile-menu" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
         class="header__mobile-menu header__mobile-menu_visible">
@@ -110,8 +115,9 @@
         <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
         </p>
         <form class="search__container-input">
-          <input class="search__input" type="text" placeholder="Введите тему новости">
-          <button class="search__button">Искать</button>
+          <input id="search-input" class="search__input" type="text" placeholder="Введите тему новости">
+          <span class="error-message"></span>
+          <button id="search-button" class="search__button">Искать</button>
         </form>
       </div>
     </div>

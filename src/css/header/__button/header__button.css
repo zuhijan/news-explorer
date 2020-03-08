@@ -20,7 +20,9 @@
   color: #000;
   border: 1px solid #000;
 }
-
+.header__button_hide {
+  display: none;
+}
 @media (max-width: 890px) {
   .header__button {
     font-size: 16px;
