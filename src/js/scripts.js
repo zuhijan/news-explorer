@@ -11,8 +11,10 @@ const page = document.querySelector('.page');
 const buttonAutorization = document.getElementById("button-header");
 const popupLogin = document.getElementById("login");
 const popupReg = document.getElementById("registration");
+const popupSuccess = document.getElementById("success");
 const linkToReg = document.getElementById("link-to-reg");
 const linkToLogin = document.getElementById("link-to-login");
+const successToLogin = document.getElementById("success-to-login");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuBack = document.getElementById("mobile-menu-back");
 const headerContainer = document.getElementById("container-header");
@@ -27,6 +29,7 @@ const nameLogUp = formLogUp.elements.name;
 const formLogIn = document.forms.login;
 const emailLogIn = formLogIn.elements.email;
 const passLogIn = formLogIn.elements.password;
+console.log(popupSuccess);
 
 
 const options = {
@@ -36,7 +39,6 @@ const options = {
     "Content-Type": "application/json"
   }
 }
-
 //функция валидации инпутов
 function resetError(element) {
   element.classList.remove('popup__input_invalidate');
@@ -110,7 +112,10 @@ const login = new Popup(popupLogin, {}, {
 const reg = new Popup(popupReg, {}, {
   Overlay,
 });
-// const api = new MainApi(options)
+const success = new Popup(popupSuccess, {}, {
+  Overlay,
+});
+const api = new MainApi(options)
 const {isEmpty, isWrongLength, isNotEmail, isWrongPassword} = new Validation();
 
 //исполняющий код
@@ -150,23 +155,23 @@ new Button(mobileMenuBack, {
   },
 });
 
-// new Button(buttonLogUp, {
-//   click: () => {
-//     api.postSignUp(emailLogUp.value, passLogUp.value, nameLogUp.value)
-//       .then((res) => {
-//         console.log(res);
-//       })
-//       .catch((err) => {
-//         console.log(`что-то пошло не так: ${err.message}`);
-//         console.log(err);
-//       })
-//   }
-// })
+new Button(buttonLogUp, {
+  click: () => {
+    api.postSignUp(emailLogUp.value, passLogUp.value, nameLogUp.value)
+      .then((res) => {
+        console.log(res);
+        reg.close();
+        success.open();
+      })
+      .catch((err) => {
+        console.log(`что-то пошло не так: ${err.message}`);
+        console.log(err);
+      })
+  }
+})
 
 new Button(buttonLogIn, {
   click: () => {
-    console.log(emailLogIn.value);
-
     api.postSignIn(emailLogIn.value, passLogIn.value)
       .then((res) => {
         console.log(res);
@@ -180,6 +185,12 @@ new Button(buttonLogIn, {
   }
 })
 
+new Button( successToLogin, {
+  click: () => {
+    success.close();
+    login.open();
+  }
+})
 // new Button(buttonLogIn, {
 //   click: () => {
 //     console.log(passLogIn.value);
@@ -202,9 +213,9 @@ passLogIn.addEventListener("input", validate);
 passLogUp.addEventListener("input", validate);
 nameLogUp.addEventListener("input", validate);
 
-// new Form(formLogUp, {
-//   input: validate,
-// })
+new Form(formLogUp, {
+  input: validateForm,
+})
 
 
 new Form(formLogIn, {
