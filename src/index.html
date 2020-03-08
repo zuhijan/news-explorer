@@ -37,7 +37,7 @@
       </div>
       <button id="login-button" type='button' class="popup__button" disabled name="button">Войти</button>
     </form>
-    <p class="popup__desctipntion">или<a id="link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
+    <p class="popup__description">или<a id="link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
     </p>
   </div>
 </div>
@@ -69,10 +69,11 @@
       </div>
       <button id="logup-button" type='button' class="popup__button" name="button">Зарегистрироваться</button>
     </form>
-    <p class="popup__desctipntion">или<a href="#" id="link-to-login" class="popup__link"> Войти</a></p>
+    <p class="popup__description">или<a href="#" id="link-to-login" class="popup__link"> Войти</a></p>
   </div>
 </div>
-<div class="popup popup__succes">
+<div id="success" class="popup popup__success">
+  <div class="overlay"></div>
   <div class="popup__content ">
     <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
       <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
@@ -80,7 +81,7 @@
       <path d="M18.13 20l-8.82 8.822 2.356 2.357 10.472-10.472a1 1 0 000-1.414L11.666 8.82 9.31 11.178 18.131 20z"
         fill="#fff" /></svg>
     <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-    <a href="#" class="popup__link">Выполнить вход</a>
+    <p id="success-to-login" class="popup__link">Выполнить вход</p>
   </div>
 </div>
 
@@ -91,7 +92,6 @@
       <div id="container-header" class="header__container header__container_hide">
         <nav class="menu">
           <a class="menu__link menu__link_linked_white" href="index.html">Главная</a>
-          <a class="menu__link menu__link_hover_white" href="about.html">О&nbsp;проекте</a>
           <a class="menu__link menu__link_hover_white" href="saved.html">Сохраненные&nbsp;статьи</a>
         </nav>
         <button id="button-header" class="header__button header__button_white">Авторизоваться</button>

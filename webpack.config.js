@@ -75,11 +75,6 @@ module.exports = {
       template: './src/saved/index.html',
       filename: 'saved.html'
     }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: './src/about/index.html',
-      filename: 'about.html'
-    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
