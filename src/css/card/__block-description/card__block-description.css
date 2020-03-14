@@ -1,7 +1,8 @@
 .card__block-description {
   padding: 20px 24px 24px;
   height: 234px;
-  overflow: hidden;
+  /*overflow: hidden;*/
+  box-sizing: border-box;
 
 }
 

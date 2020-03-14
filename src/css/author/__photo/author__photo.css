@@ -1,7 +1,6 @@
 .author__photo {
   margin-right: 56px;
 }
-
 @media (max-width: 1025px) {
   .author__photo {
     width: 232px;

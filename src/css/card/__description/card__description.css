@@ -4,11 +4,11 @@
   line-height: 22px;
   color: #1a1b22;
   overflow: hidden;
-  margin-bottom: 12px;
+  max-height: 112px;
 }
 
 @media (max-width: 890px) {
   .card__description {
-    height: 88px;
+    max-height: 88px;
   }
 }
