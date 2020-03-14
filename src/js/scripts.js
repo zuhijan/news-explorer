@@ -27,6 +27,7 @@ const buttonLogIn = document.getElementById("login-button");
 const menuLink = document.getElementById("menu-link");
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
+const resultsContainer = document.getElementById("results-container");
 
 const formLogUp = document.forms.logup;
 const emailLogUp = formLogUp.elements.email;
@@ -129,6 +130,9 @@ function validateSearch(element) {
   }
 }
 
+function formatDate(date) {
+  return new Date(date).toLocaleString("ru", { year: 'numeric', month: 'long', day: 'numeric'});
+}
 // объявление классов
 const login = new Popup(popupLogin, {}, {
   Overlay,
@@ -141,7 +145,7 @@ const success = new Popup(popupSuccess, {}, {
 });
 const mainApi = new MainApi(optionsMainApi);
 const newsApi = new NewsApi(optionsNewsApi);
-// const newsCard = new NewsCard();
+const newsCard = new NewsCard();
 const {isEmpty, isWrongLength, isNotEmail, isWrongPassword} = new Validation();
 
 //исполняющий код
@@ -232,18 +236,30 @@ new Button( searchButton, {
       newsApi.getCards(question, weekAgo, today)
         .then((res) => {
           const { articles } = res;
-          const imgValue = articles[0].urlToImage;
-          const dateValue = articles[0].publishedAt;
-          const titleValue = articles[0].title;
-          const descriptionValue = articles[0].description;
-          const sourceValue = articles[0].source.name;
+          // const imgValue = articles[0].urlToImage;
+          // const dateValue = articles[0].publishedAt;
+          // const titleValue = articles[0].title;
+          // const descriptionValue = articles[0].description;
+          // const sourceValue = articles[0].source.name;
 
-          console.log(imgValue);
-          console.log(dateValue);
-          console.log(titleValue);
-          console.log(descriptionValue);
-          console.log(sourceValue);
-          // newsCard.create(imgValue, dateValue, titleValue, descriptionValue, sourceValue);
+          // console.log(imgValue);
+          // console.log(dateValue);
+          // console.log(titleValue);
+          // console.log(descriptionValue);
+          // console.log(sourceValue);
+          for (let i = 0; i < 3; i++) {
+            const cardElement =  newsCard.create(
+            articles[i].urlToImage,
+            formatDate(articles[i].publishedAt),
+            articles[i].title,
+            articles[i].description,
+            articles[i].source.name, );
+            console.log(formatDate(articles[i].publishedAt));
+            console.log(articles[i].publishedAt);
+            resultsContainer.appendChild(cardElement);
+          }
+
+
         })
         .catch(err => console.log(err));
     }

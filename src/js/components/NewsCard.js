@@ -1,11 +1,17 @@
-export default class NewsCard {
-  constructor(imgValue, dateValue, titleValue, descriptionValue, sourceValue) {
-    this.cardElement = this.create(imgValue, dateValue, titleValue, descriptionValue, sourceValue);
+import BaseComponent from './BaseComponent';
+
+export default class NewsCard extends BaseComponent {
+  constructor(...args) {
+    super(...args);
+    // this.imgValue = imgValue;
+    // dateValue, titleValue, descriptionValue, sourceValue
+    // this.cardElement = this.create(imgValue, dateValue, titleValue, descriptionValue, sourceValue);
   }
+
   create(imgValue, dateValue, titleValue, descriptionValue, sourceValue) {
     const card = document.createElement("div");
-    // const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" class="card__icon card__icon_mark" ><defs /><rect width="40" height="40" fill="#fff" rx="8" /><path stroke="#B6BCBF" stroke-width="2" d="M19.38 23.71L14 27.94V12h12v15.94l-5.38-4.23-.62-.48-.62.48z" /></svg>`;
-    const cardImage = new Image();
+    // const svg = `<svg xmlns="http://www.w3.org/2000/svg"` + `width="40" height="40" fill="none" ` + `class="card__icon card__icon_mark" ><defs`  ` /><rect width="40" height="40" ` `fill="#fff" rx="8" /><path stroke="#B6BCBF"` `stroke-width="2" d="M19.38 23.71L14 ` `27.94V12h12v15.94l-5.38-4.23-.62-.48-.62.48z"` `/><` `/svg>`;
+    const cardImage = document.createElement("div");
     const cardAuto= document.createElement("p");
     const cardBlockDescription = document.createElement("div");
     const cardDate = document.createElement("p");
@@ -14,7 +20,7 @@ export default class NewsCard {
     const cardSource = document.createElement("p");
     card.classList.add("card");
     cardImage.classList.add("card__photo");
-    cardImage.src = imgValue;
+    cardImage.style.backgroundImage = `url(${imgValue})`;
     cardAuto.classList.add("card__auto");
     cardBlockDescription.classList.add("card__block-description");
     cardDate.classList.add("card__date");
