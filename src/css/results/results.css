@@ -5,6 +5,9 @@
 .results {
   background: #f5f6f7;
 }
+.results_hide {
+  display: none;
+}
 .results__content {
   max-width: 1232px;
   min-width: 288px;

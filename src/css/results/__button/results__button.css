@@ -1,4 +1,5 @@
 .results__button {
+  max-width: 288px;
   font-family: "Roboto-medium", "Arial";
   font-weight: 500;
   font-size: 18px;
@@ -8,14 +9,14 @@
   background-color: #fff;
   cursor: pointer;
   padding: 20px 84px;
-  align-self: center;
-  margin-top: 82px;
+  margin: 64px auto 0;
   transition: background-color 0.2s ease-in-out;
-
 }
 .results__button:hover {
   background-color: #E6E8EB;;
-
+}
+.results__button_hide {
+  display: none;
 }
 
 @media (max-width: 890px) {

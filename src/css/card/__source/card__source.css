@@ -1,5 +1,8 @@
 .card__source {
   font-family: "Roboto Slab", "Helvetica CY";
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.4px;
@@ -9,8 +12,9 @@
   text-align: left;
 }
 
-/* @media (max-width: 890px) {
-  .card__source {
-
-  }
-} */
+ @media (max-width: 890px) {
+ .card__source {
+   left: 16px;
+   bottom: 16px
+ }
+}

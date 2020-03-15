@@ -12,8 +12,8 @@
 @import url("card-git/card-git.css");
 @import url("footer/footer.css");
 @import url("error-message/error-message.css");
-
-
+@import url("popup/popup.css");
+@import url("preloader/preloader.css");
 
 @font-face {
   src: url("../vendor/fonts/roboto-medium-webfont.woff");

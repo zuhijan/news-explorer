@@ -1,7 +1,7 @@
 .card__block-description {
   padding: 20px 24px 24px;
-  height: 234px;
-  /*overflow: hidden;*/
+  max-height: 275px;
+  overflow: hidden;
   box-sizing: border-box;
 
 }
@@ -9,6 +9,7 @@
 @media (max-width: 890px) {
   .card__block-description {
     padding: 16px;
+    max-height: 247px;
 
   }
 }
