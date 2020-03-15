@@ -14,76 +14,6 @@
 </head>
 
 <body class="page">
-  <div id="login" class="popup">
-    <div class="overlay"></div>
-
-    <div class="popup__content">
-      <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
-        <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
-          fill="#fff" />
-        <path d="M18.13 20l-8.82 8.822 2.356 2.357 10.472-10.472a1 1 0 000-1.414L11.666 8.82 9.31 11.178 18.131 20z"
-          fill="#fff" /></svg>
-      <h3 class="popup__title">Вход</h3>
-      <form class="popup__form" name="login">
-        <p class="popup__subtitle">Email</p>
-        <div class="popup__container-input">
-          <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
-          <span class="error-message"></span>
-        </div>
-        <p class="popup__subtitle">Пароль</p>
-        <div class="popup__container-input">
-          <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
-          <span class="error-message"></span>
-        </div>
-        <button id="login-button" type='button' class="popup__button" name="button">Войти</button>
-      </form>
-      <p class="popup__description">или<a id="link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
-      </p>
-    </div>
-  </div>
-  <div id="registration" class="popup">
-    <div class="overlay"></div>
-
-    <div class="popup__content">
-      <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
-        <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
-          fill="#fff" />
-        <path d="M18.13 20l-8.82 8.822 2.356 2.357 10.472-10.472a1 1 0 000-1.414L11.666 8.82 9.31 11.178 18.131 20z"
-          fill="#fff" /></svg>
-      <h3 class="popup__title">Регистрация</h3>
-      <form class="popup__form" name="logup">
-        <p class="popup__subtitle">Email</p>
-        <div class="popup__container-input">
-          <input type="email" name="email" required class="popup__input" placeholder="Введите почту">
-          <span class="error-message error-message_email"></span>
-        </div>
-        <p class="popup__subtitle">Пароль</p>
-        <div class="popup__container-input">
-          <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
-          <span class="error-message error-message_password"></span>
-        </div>
-        <p class="popup__subtitle">Имя</p>
-        <div class="popup__container-input">
-          <input type="text" name="name" required class="popup__input" placeholder="Введите своё имя">
-          <span class="error-message error-message_name"></span>
-        </div>
-        <button type='button' class="popup__button" name="button">Зарегистрироваться</button>
-      </form>
-      <p class="popup__description">или<a href="#" id="link-to-login" class="popup__link"> Войти</a></p>
-    </div>
-  </div>
-  <div id="success" class="popup popup__success">
-    <div class="overlay"></div>
-    <div class="popup__content ">
-      <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup__close">
-        <path d="M22.357 20l8.821 8.822-2.357 2.357L18.35 20.706a1 1 0 010-1.414L28.82 8.82l2.357 2.357L22.357 20z"
-              fill="#fff" />
-        <path d="M18.13 20l-8.82 8.822 2.356 2.357 10.472-10.472a1 1 0 000-1.414L11.666 8.82 9.31 11.178 18.131 20z"
-              fill="#fff" /></svg>
-      <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-      <a href="#" class="popup__link">Выполнить вход</a>
-    </div>
-  </div>
   <header class="header">
     <a href="index.html" class="header__logo-text">NewsExplorer</a>
     <div id="container-header" class="header__container header__container_hide">
@@ -92,7 +22,7 @@
         <a class="menu__link menu__link_hover_black" href="index.html">Главная</a>
         <a class="menu__link menu__link_linked_black" href="saved.html">Сохраненные&nbsp;статьи</a>
       </nav>
-      <button id="button-header-logout" class="header__button header__button_black"><p id="button-header__name">Грета&nbsp;</p>
+        <button id="button-header-logout" class="header__button header__button_black"> <p id="button-header__name"></p>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
             d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z"
@@ -112,136 +42,18 @@
     <section class="saved">
       <div class="saved__info-container">
         <h4 class="saved__title ">Сохраненные статьи</h4>
-        <p class="saved__description">Грета, у вас 5 сохраненных статей</p>
+        <p class="saved__description"> <span id="name"></span>, у вас <span id="count"></span> сохраненных статей</p>
         <p class="saved__keys">По ключевым словам: <span class="saved__keys saved__keys_bold">Природа,</span> <span
             class="saved__keys saved__keys_bold">Тайга</span> и <span class="saved__keys saved__keys_bold">2
             другим</span></p>
 
-
       </div>
       <div class="saved__content">
-
-        <div class="saved__cardlist">
-          <div class="card">
-            <img src="<%=require('../images/image_08.png')%>" alt="фото для статьи" class="card__photo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
-              class="card__icon card__icon_delete">
-              <defs />
-              <rect width="40" height="40" fill="#fff" rx="8" />
-              <path fill="#B6BCBF" fill-rule="evenodd"
-                d="M23 11h-6v2h-6v2h18v-2h-6v-2zm-10 6v11c0 1.1.9 2 2 2h10a2 2 0 002-2V17h-2v11H15V17h-2zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2z"
-                clip-rule="evenodd" />
-            </svg>
-            <p class="card__key">Природа</p>
-            <p class="card__auto card__auto_no">Убрать из сохранённых</p>
-            <div class="card__block-description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться
-                к
-                природе.</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-
-          </div>
-          <div class="card">
-            <img src="<%=require('../images/image_08.png')%>" alt="фото для статьи" class="card__photo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
-              class="card__icon card__icon_delete">
-              <defs />
-              <rect width="40" height="40" fill="#fff" rx="8" />
-              <path fill="#B6BCBF" fill-rule="evenodd"
-                d="M23 11h-6v2h-6v2h18v-2h-6v-2zm-10 6v11c0 1.1.9 2 2 2h10a2 2 0 002-2V17h-2v11H15V17h-2zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2z"
-                clip-rule="evenodd" />
-            </svg>
-            <p class="card__key">Природа</p>
-            <p class="card__auto card__auto_no">Убрать из сохранённых</p>
-
-            <div class="card__block-description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться
-                к
-                природе.</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-
-          </div>
-          <div class="card">
-            <img src="<%=require('../images/image_08.png')%>" alt="фото для статьи" class="card__photo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
-              class="card__icon card__icon_delete">
-              <defs />
-              <rect width="40" height="40" fill="#fff" rx="8" />
-              <path fill="#B6BCBF" fill-rule="evenodd"
-                d="M23 11h-6v2h-6v2h18v-2h-6v-2zm-10 6v11c0 1.1.9 2 2 2h10a2 2 0 002-2V17h-2v11H15V17h-2zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2z"
-                clip-rule="evenodd" />
-            </svg>
-            <p class="card__auto card__auto_no">Убрать из сохранённых</p>
-
-            <p class="card__key">Природа</p>
-
-            <div class="card__block-description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться
-                к
-                природе.</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-
-          </div>
-          <div class="card">
-            <img src="<%=require('../images/image_08.png')%>" alt="фото для статьи" class="card__photo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
-              class="card__icon card__icon_delete">
-              <defs />
-              <rect width="40" height="40" fill="#fff" rx="8" />
-              <path fill="#B6BCBF" fill-rule="evenodd"
-                d="M23 11h-6v2h-6v2h18v-2h-6v-2zm-10 6v11c0 1.1.9 2 2 2h10a2 2 0 002-2V17h-2v11H15V17h-2zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2z"
-                clip-rule="evenodd" />
-            </svg>
-            <p class="card__key">Природа</p>
-            <p class="card__auto card__auto_no">Убрать из сохранённых</p>
-
-            <div class="card__block-description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться
-                к
-                природе.</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-
-          </div>
-          <div class="card">
-            <img src="<%=require('../images/image_08.png')%>" alt="фото для статьи" class="card__photo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
-              class="card__icon card__icon_delete">
-              <defs />
-              <rect width="40" height="40" fill="#fff" rx="8" />
-              <path fill="#B6BCBF" fill-rule="evenodd"
-                d="M23 11h-6v2h-6v2h18v-2h-6v-2zm-10 6v11c0 1.1.9 2 2 2h10a2 2 0 002-2V17h-2v11H15V17h-2zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2z"
-                clip-rule="evenodd" />
-            </svg>
-            <p class="card__key">Природа</p>
-            <p class="card__auto card__auto_no">Убрать из сохранённых</p>
-
-            <div class="card__block-description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться
-                к
-                природе.</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-
-          </div>
+        <div id="circle-preloader" class="overlay-preloader overlay-preloader_hide ">
+          <i  class="circle-preloader   ">
+          </i>
+        </div>
+        <div id="saved-cardlist" class="saved__cardlist">
         </div>
       </div>
     </section>
@@ -269,7 +81,7 @@
     </div>
 
   </footer>
-  <script src='<%= htmlWebpackPlugin.files.chunks.main.entry %>'> </script>
+  <script src='<%= htmlWebpackPlugin.files.chunks.savedPage.entry %>'> </script>
 </body>
 
 </html>

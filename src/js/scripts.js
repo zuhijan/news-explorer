@@ -7,9 +7,9 @@ import MainApi from './api/MainApi';
 import NewsApi from './api/NewsApi';
 import NewsCard from './components/NewsCard';
 import Validation from './components/Validation';
+import Header from './components/Header';
+import { today, weekAgo, formatDate } from './utils/date';
 
-
-const page = document.querySelector('.page');
 const buttonAuthorization = document.getElementById("button-header-login");
 const buttonLogOut= document.getElementById("button-header-logout");
 const buttonLogOutName= document.getElementById("button-header__name");
@@ -28,6 +28,9 @@ const menuLink = document.getElementById("menu-link");
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const resultsContainer = document.getElementById("results-container");
+const resultsButton = document.getElementById("results-button");
+const resultsSection = document.getElementById("results");
+const circlePreloader = document.getElementById("circle-preloader");
 
 const formLogUp = document.forms.logup;
 const emailLogUp = formLogUp.elements.email;
@@ -38,32 +41,23 @@ const formLogIn = document.forms.login;
 const emailLogIn = formLogIn.elements.email;
 const passLogIn = formLogIn.elements.password;
 
-const today = new Date().toISOString("en-US", { year: 'numeric', month: 'numeric', day: 'numeric'});
-const timeInMilSecWeek = 7 * 24 * 3600 * 1000;
-const weekAgo = new Date((Date.now() - timeInMilSecWeek)).toISOString("en-US", { year: 'numeric', month: 'numeric', day: 'numeric'});
+let articlesArray = [];
+let lastRenderedArticle = 0;
+let token = localStorage.getItem('token');
+let isLoggedIn = false;
+let keyword;
 const optionsMainApi = {
-  // baseUrl: 'https://api.news-explorer.ru',
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.news-explorer.ru',
   headers: {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    authorization: `Bearer ${token}`
   }
 };
 const optionsNewsApi = {
-  // baseUrl: 'https://api.news-explorer.ru',
   baseUrl: 'https://newsapi.org/v2/everything?language=ru&pageSize=100&q=',
   apiKey: "2836cb6ec1c5477f88fc63639c5e0025"
 };
 //функция валидации инпутов
-function resetError(element) {
-  element.classList.remove('popup__input_invalidate');
-  element.textContent = '';
-}
-
-function activateError(element, text) {
-  element.textContent = text;
-  element.classList.add('popup__input_invalidate');
-}
-
 function validate(event) {
   const errorElement = event.target.nextElementSibling;
   if (isEmpty(event.target)) {
@@ -87,7 +81,6 @@ function validate(event) {
   }
   return true;
 }
-
 function validateForm(event) {
   const form = event.currentTarget;
   const inputs = Array.from(form.elements);
@@ -117,7 +110,7 @@ function validateForm(event) {
     form.elements.button.classList.remove('popup__button_active');
     form.elements.button.setAttribute('disabled', true);
   }
-};
+}
 
 function validateSearch(element) {
   const errorElement = element.nextElementSibling;
@@ -130,9 +123,6 @@ function validateSearch(element) {
   }
 }
 
-function formatDate(date) {
-  return new Date(date).toLocaleString("ru", { year: 'numeric', month: 'long', day: 'numeric'});
-}
 // объявление классов
 const login = new Popup(popupLogin, {}, {
   Overlay,
@@ -143,11 +133,12 @@ const reg = new Popup(popupReg, {}, {
 const success = new Popup(popupSuccess, {}, {
   Overlay,
 });
+
 const mainApi = new MainApi(optionsMainApi);
 const newsApi = new NewsApi(optionsNewsApi);
 const newsCard = new NewsCard();
-const {isEmpty, isWrongLength, isNotEmail, isWrongPassword} = new Validation();
-
+const { isEmpty, isWrongLength, isNotEmail, isWrongPassword, resetError, activateError } = new Validation();
+const header = new Header();
 //исполняющий код
 new Button(buttonAuthorization, {
   click: () => {
@@ -203,14 +194,15 @@ new Button(buttonLogUp, {
 new Button(buttonLogIn, {
   click: () => {
     mainApi.postSignIn(emailLogIn.value, passLogIn.value)
+      .then((data) => {
+        localStorage.setItem('token', data.token);
+        token = localStorage.getItem('token');
+        isLoggedIn = true;
+      })
       .then(() => {
-        mainApi.getUserInfo()
+        mainApi.getUserInfo(token)
           .then((res) => {
-            buttonAuthorization.classList.add('header__button_hide');
-            buttonLogOut.classList.remove('header__button_hide');
-            menuLink.classList.remove('menu__link_hide');
-            buttonLogOutName.textContent = res.name;
-            console.log(res.name)
+            header.render({isLoggedIn, name: res.name});
           }).catch((err) => {
             console.log(err)
           });
@@ -231,42 +223,59 @@ new Button( successToLogin, {
 new Button( searchButton, {
   click: (event) => {
     event.preventDefault();
-    const question = searchInput.value;
+    keyword = searchInput.value;
     if(validateSearch(searchInput)) {
-      newsApi.getCards(question, weekAgo, today)
+      circlePreloader.classList.remove('overlay-preloader_hide');
+      newsApi.getCards(keyword, weekAgo, today)
         .then((res) => {
+          console.log(res);
+          circlePreloader.classList.add('overlay-preloader_hide');
+          resultsSection.classList.remove('results_hide');
           const { articles } = res;
-          // const imgValue = articles[0].urlToImage;
-          // const dateValue = articles[0].publishedAt;
-          // const titleValue = articles[0].title;
-          // const descriptionValue = articles[0].description;
-          // const sourceValue = articles[0].source.name;
-
-          // console.log(imgValue);
-          // console.log(dateValue);
-          // console.log(titleValue);
-          // console.log(descriptionValue);
-          // console.log(sourceValue);
-          for (let i = 0; i < 3; i++) {
+          articlesArray = articles;
+          let lastStep = lastRenderedArticle + 3;
+          for (let i = lastRenderedArticle; i < lastStep; i++) {
             const cardElement =  newsCard.create(
-            articles[i].urlToImage,
-            formatDate(articles[i].publishedAt),
-            articles[i].title,
-            articles[i].description,
-            articles[i].source.name, );
-            console.log(formatDate(articles[i].publishedAt));
-            console.log(articles[i].publishedAt);
+            articlesArray[i].urlToImage,
+            formatDate(articlesArray[i].publishedAt),
+            articlesArray[i].title,
+            articlesArray[i].description,
+            articlesArray[i].source.name, isLoggedIn);
             resultsContainer.appendChild(cardElement);
+            console.log(resultsContainer);
+            lastRenderedArticle++;
           }
-
-
+          if (lastRenderedArticle >= (articlesArray.length - 1)) {
+            resultsButton.classList.add('results__button_hide');
+          }
         })
         .catch(err => console.log(err));
     }
   }
 });
 
+new Button( resultsButton, {
+  click: () => {
+    let lastStep = lastRenderedArticle + 3;
+    if (lastStep > (articlesArray.length - 1)) {
+      lastStep = articlesArray.length - 1;
+    }
+    for (let i = lastRenderedArticle; i < lastStep; i++) {
+      const cardElement =  newsCard.create(
+        articlesArray[i].urlToImage,
+        formatDate(articlesArray[i].publishedAt),
+        articlesArray[i].title,
+        articlesArray[i].description,
+        articlesArray[i].source.name, true);
+        resultsContainer.appendChild(cardElement);
+        lastRenderedArticle++;
+    }
 
+    if (lastRenderedArticle >= (articlesArray.length - 1)) {
+      resultsButton.classList.add('results__button_hide');
+    }
+  }
+});
 
 emailLogIn.addEventListener("input", validate);
 emailLogUp.addEventListener("input", validate);
@@ -276,20 +285,57 @@ nameLogUp.addEventListener("input", validate);
 
 new Form(formLogUp, {
   input: validateForm,
-})
-
+});
 
 new Form(formLogIn, {
   input: validateForm,
-})
-// new Form(page, {
-//   popupOpen: function () {
-//     console.log('123')
-//   }
-// })
+});
 
 
-// document.cookie="foo=bar";
-// console.log(`куки: ${document.cookie}`);
+if(token) {
+  circlePreloader.classList.remove('overlay-preloader_hide');
+  mainApi.getUserInfo(token)
+    .then((res) => {
+      isLoggedIn = true;
+      header.render({isLoggedIn, name: res.name});
+      circlePreloader.classList.add('overlay-preloader_hide');
+    }).catch((err) => {
+    console.log(err);
+    isLoggedIn = false;
+  });
+}
 
+document.addEventListener("click", event => {
+  if (event.target.classList.contains("card__icon")) {
+    const icon = event.target;
+    const imageUrl = icon.previousSibling.style.backgroundImage.split(`"`)[1];
+    const cardDescriptionBlock = event.target.nextSibling;
+    const cardDate = cardDescriptionBlock.firstChild;
+    const cardDateValue = cardDate.textContent;
+    const cardTitle = cardDate.nextElementSibling;
+    const cardTitleValue = cardTitle.textContent;
+    const cardDescription = cardTitle.nextElementSibling;
+    const cardDescriptionValue = cardDescription.textContent;
+    const cardSource = cardDescription.nextElementSibling;
+    const cardSourceValue = cardSource.textContent;
+    const link = 'http://localhost:8080/';
 
+    mainApi.postArticle(
+      keyword,
+      cardTitleValue,
+      cardDescriptionValue,
+      cardDateValue,
+      cardSourceValue,
+      link,
+      imageUrl,
+    )
+      .then((res) => {
+        console.log(res);
+        icon.classList.add('card__icon_saved');
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+  }
+});

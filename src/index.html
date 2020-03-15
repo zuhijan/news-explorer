@@ -123,30 +123,17 @@
     </div>
 
   </section>
-  <section class="results">
-    <div class="results__content">
+  <div id="circle-preloader" class="overlay-preloader overlay-preloader_hide ">
+    <i  class="circle-preloader   ">
+    </i>
+  </div>
+  <section id="results" class="results results_hide">
+    <div  class="results__content ">
       <h2 class="results__title">Результаты поиска</h2>
       <div id="results-container" class="results__container">
-        <div class="card">
-          <div class="card__photo"></div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" class="card__icon card__icon_mark">
-            <defs />
-            <rect width="40" height="40" fill="#fff" rx="8" />
-            <path stroke="#B6BCBF" stroke-width="2" d="M19.38 23.71L14 27.94V12h12v15.94l-5.38-4.23-.62-.48-.62.48z" />
-          </svg>
-          <p class="card__auto card__auto_no">Войдите, чтобы сохранять статьи</p>
-          <div class="card__block-description">
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к
-              природе.</p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
         </div>
-      </div>
-      <button class="results__button">Показать еще</button>
+      <button id="results-button" class="results__button">Показать еще</button>
+    </div>
     </div>
   </section>
   <section class="author">
