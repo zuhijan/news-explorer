@@ -13,5 +13,13 @@ export default class Validation {
   isWrongPassword(field) {
     return (field.value.trim().length < 8 || field.value.trim().length > 30) && field.type == 'password';
   }
+  resetError(element) {
+    element.classList.remove('popup__input_invalidate');
+    element.textContent = '';
+  }
+  activateError(element, text) {
+    element.textContent = text;
+    element.classList.add('popup__input_invalidate');
+  }
 
 }

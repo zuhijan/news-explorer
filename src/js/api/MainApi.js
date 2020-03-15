@@ -10,10 +10,12 @@ export default class MainApi {
       return Promise.reject(res.status);
     }
   }
-  getUserInfo() {
+  getUserInfo(token) {
     return fetch(`${this.baseUrl}/users/me`, {
-      headers: this.headers,
-      credentials: 'include',
+      headers: {
+        authorization: `Bearer ${token}`
+      },
+    credentials: 'include'
     })
       .then(res => this.getResponseJson(res)
       )
@@ -22,15 +24,15 @@ export default class MainApi {
     return fetch(`${this.baseUrl}/articles`, {
       headers: this.headers
     })
-      .then(res => this.getResponseJson(res)
-      )
+      .then(res => this.getResponseJson(res))
   }
+
   postArticle(keyword, title, text, date, source, link, image) {
     return fetch(`${this.baseUrl}/articles`, {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify({
-        keyword: keyword,
+        keyword,
         title: title,
         text: text,
         date: date,
@@ -39,16 +41,17 @@ export default class MainApi {
         image: image
       })
     })
-      .then(res => this.getResponseJson(res))
+      .then(res => {
+        if (res.ok) {
+      return res;
+    } else {
+      return Promise.reject(res.status);
+    }})
   }
   deleteArticle(articleId) {
-    return fetch(`${this.baseUrl}/articles/articleId`, {
+    return fetch(`${this.baseUrl}/articles/${articleId}`, {
       method: "DELETE",
-      // credentials: 'include',
       headers: this.headers,
-      body: JSON.stringify({
-        articleId: articleId
-      })
     })
       .then(res => this.getResponseJson(res))
   }
@@ -74,12 +77,6 @@ export default class MainApi {
         password: password
       })
     })
-      .then(res =>  {
-        if (res.ok) {
-          return res;
-        } else {
-          return Promise.reject(res.status);
-        }
-      })
+      .then(res => this.getResponseJson(res))
   }
 }
