@@ -18,6 +18,19 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+.results_no-data {
+  font-family: "Roboto Slab", "Helvetica CY";
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #7c7d75;
+  margin: 0;
+  margin-bottom: 64px;
+}
+.results_no-data_hide {
+ display: none;
+}
 @media (max-width: 1025px) {
   .results__content {
     padding: 40px;

@@ -43,9 +43,7 @@
       <div class="saved__info-container">
         <h4 class="saved__title ">Сохраненные статьи</h4>
         <p class="saved__description"> <span id="name"></span>, у вас <span id="count"></span> сохраненных статей</p>
-        <p class="saved__keys">По ключевым словам: <span class="saved__keys saved__keys_bold">Природа,</span> <span
-            class="saved__keys saved__keys_bold">Тайга</span> и <span class="saved__keys saved__keys_bold">2
-            другим</span></p>
+        <p class="saved__keys">По ключевым словам: <span id="saved-keys" class="saved__keys saved__keys_bold"></span></p>
 
       </div>
       <div class="saved__content">
@@ -53,6 +51,8 @@
           <i  class="circle-preloader   ">
           </i>
         </div>
+        <button id="results-button" class="results__button results__button_hide">Показать еще</button>
+        <p id="no-data" class="results_no-data results_no-data_hide">Данные отсутствуют</p>
         <div id="saved-cardlist" class="saved__cardlist">
         </div>
       </div>

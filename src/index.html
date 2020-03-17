@@ -35,7 +35,11 @@
         <input type="password" name="password" required class="popup__input" placeholder="Введите пароль">
         <span class="error-message error-message_password"></span>
       </div>
+      <div class="popup__container-input">
       <button id="login-button" type='button' class="popup__button" disabled name="button">Войти</button>
+      <span class="error-message"></span>
+      </div>
+
     </form>
     <p class="popup__description">или<a id="link-to-reg" href="#" class="popup__link"> Зарегистрироваться</a>
     </p>
@@ -67,7 +71,10 @@
         <input type="text" name="name" required class="popup__input" placeholder="Введите своё имя">
         <span class="error-message"></span>
       </div>
+      <div class="popup__container-input">
       <button id="logup-button" type='button' class="popup__button" name="button">Зарегистрироваться</button>
+      <span class="error-message"></span>
+      </div>
     </form>
     <p class="popup__description">или<a href="#" id="link-to-login" class="popup__link"> Войти</a></p>
   </div>
@@ -133,6 +140,7 @@
       <div id="results-container" class="results__container">
         </div>
       <button id="results-button" class="results__button">Показать еще</button>
+      <p id="no-data" class="results_no-data results_no-data_hide">Данные отсутствуют</p>
     </div>
     </div>
   </section>
