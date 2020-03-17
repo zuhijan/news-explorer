@@ -1,11 +1,18 @@
 import BaseComponent from './BaseComponent';
+import {formatDate} from "../utils/date";
 
 export default class NewsCard extends BaseComponent {
   constructor(...args) {
     super(...args);
   }
 
-  create(imgValue, dateValue, titleValue, descriptionValue, sourceValue, isLoggedIn, key, idCard) {
+  create(article, isLoggedIn, key, idCard) {
+    const imgValue = article.urlToImage ? article.urlToImage : article.image;
+    const dateValue = article.publishedAt ? formatDate(article.publishedAt) : article.date;
+    const titleValue = article.title;
+    const descriptionValue = article.description ? article.description : article.text;
+    const sourceValue = article.source ? article.source.name : article.source;
+
     const card = document.createElement("div");
     const cardImage = document.createElement("div");
     const cardIcon= document.createElement("div");
