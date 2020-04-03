@@ -1,0 +1,19 @@
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 30%;
+}
+
+@media (max-width: 615px) {
+  .footer__nav {
+  flex-direction: column;
+
+  }
+}
+
+@media (max-width: 450px) {
+  .footer__nav {
+    margin-bottom: 40px;
+
+  }
+}

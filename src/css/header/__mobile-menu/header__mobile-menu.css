@@ -1,0 +1,10 @@
+.header__mobile-menu {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .header__mobile-menu_visible {
+    display: block;
+  }
+}

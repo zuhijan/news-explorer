@@ -1,0 +1,14 @@
+.card-git__user {
+  font-family: "Roboto Slab", "Helvetica CY";
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+@media (max-width: 1025px) {
+  .card-git__user {
+    font-size: 20px;
+  }
+}

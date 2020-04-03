@@ -1,0 +1,10 @@
+.error-message {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+
+  font-family: "Roboto-medium", "Arial";
+  color: #ff0000;
+  font-size: 12px;
+  line-height: 15px;
+}

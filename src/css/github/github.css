@@ -1,0 +1,18 @@
+@import url("__header/github__header.css");
+@import url("__title/github__title.css");
+@import url("__link/github__link.css");
+@import url("__container/github__container.css");
+@import url("__gradient/github__gradient.css");
+
+
+.github {
+  background-color: #f5f6f7;
+
+}
+.github__content {
+  position: relative;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+
+}

@@ -1,0 +1,47 @@
+.github__gradient {
+  width: 104px;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+}
+
+.github__gradient_position_left {
+  left: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.28503151260504207) 0%,
+    rgba(255, 255, 255, 0.6587009803921569) 26%,
+    rgba(250, 251, 251, 0.7651435574229692) 60%,
+    rgba(246, 247, 248, 0.9332107843137255) 84%,
+    rgba(246, 247, 248, 0.958420868347339) 93%,
+    rgba(245, 246, 247, 1) 100%
+  );
+}
+
+.github__gradient_position_right {
+  right: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.28503151260504207) 0%,
+    rgba(255, 255, 255, 0.6587009803921569) 26%,
+    rgba(250, 251, 251, 0.7651435574229692) 60%,
+    rgba(246, 247, 248, 0.9332107843137255) 84%,
+    rgba(246, 247, 248, 0.958420868347339) 93%,
+    rgba(245, 246, 247, 1) 100%
+  );
+}
+
+@media (max-width: 1025px) {
+  .github__gradientt {
+    width: 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .github__gradient {
+    width: 16px;
+  }
+}

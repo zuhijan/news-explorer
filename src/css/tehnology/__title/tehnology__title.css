@@ -1,0 +1,19 @@
+.tehnology__title {
+  max-width: 305px;
+  font-family: "Roboto Slab", "Arial";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  align-self: flex-start;
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 1025px) {
+  .tehnology__title {
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+}

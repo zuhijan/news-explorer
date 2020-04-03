@@ -1,0 +1,24 @@
+.card__icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.card__icon_delete {
+  background-image: url(../../../images/delete-normal.svg);
+}
+.card__icon_mark {
+  background-image: url(../../../images/flag-normal.svg);
+}
+.card__icon_delete:hover {
+  background-image: url(../../../images/delete-hover.svg);
+}
+.card__icon_mark:hover {
+  background-image: url(../../../images/flag-hover.svg);
+}
+.card__icon_saved {
+  background-image: url(../../../images/flag-saved.svg);
+
+}

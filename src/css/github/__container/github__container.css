@@ -1,0 +1,19 @@
+.github__container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding-left: 104px;
+}
+
+@media (max-width: 1025px) {
+  .github__container  {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .github__container  {
+    padding-left: 16px;
+  }
+}

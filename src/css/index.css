@@ -1,0 +1,34 @@
+@import url("../vendor/normalize.css");
+@import url("header/header.css");
+@import url("menu/menu.css");
+@import url("search/search.css");
+@import url("author/author.css");
+@import url("results/results.css");
+@import url("card/card.css");
+@import url("saved/saved.css");
+@import url("info/info.css");
+@import url("tehnology/tehnology.css");
+@import url("github/github.css");
+@import url("card-git/card-git.css");
+@import url("footer/footer.css");
+@import url("error-message/error-message.css");
+@import url("popup/popup.css");
+@import url("preloader/preloader.css");
+
+@font-face {
+  src: url("../vendor/fonts/roboto-medium-webfont.woff");
+  font-family: "Roboto-medium";
+}
+@font-face {
+  src: url("../vendor/fonts/roboto-regular-webfont.woff");
+  font-family: "Roboto-regular";
+}
+@font-face {
+  src: url("../vendor/fonts/robotoslab-regular-webfont.woff");
+  font-family: "Roboto Slab";
+}
+
+.top {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+}

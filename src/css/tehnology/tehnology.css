@@ -1,0 +1,32 @@
+@import url("__title/tehnology__title.css");
+@import url("__container/tehnology__container.css");
+@import url("__card-title/tehnology__card-title.css");
+@import url("__card/tehnology__card.css");
+
+.tehnology {
+  background: #f5f6f7;
+
+}
+.tehnology__content {
+  max-width: 1232px;
+  min-width: 288px;
+
+  margin: 0 auto;
+  padding: 80px 104px 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1025px) {
+  .tehnology__content {
+    flex-direction: column;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .tehnology__content {
+    padding: 32px 16px;
+  }
+}

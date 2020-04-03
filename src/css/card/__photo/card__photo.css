@@ -1,0 +1,13 @@
+.card__photo {
+  width: 100%;
+  height: 272px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.computerra.ru/wp-content/uploads/2020/03/oblozhka-3.jpg");
+}
+
+@media (max-width: 890px) {
+  .card__photo {
+    height: 150px;
+  }
+}

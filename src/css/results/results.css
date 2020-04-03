@@ -1,0 +1,44 @@
+@import url("__title/results__title.css");
+@import url("__container/results__container.css");
+@import url("__button/results__button.css");
+
+.results {
+  background: #f5f6f7;
+}
+.results_hide {
+  display: none;
+}
+.results__content {
+  max-width: 1232px;
+  min-width: 288px;
+
+  margin: 0 auto;
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.results_no-data {
+  font-family: "Roboto Slab", "Helvetica CY";
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #7c7d75;
+  margin: 0;
+  margin-bottom: 64px;
+}
+.results_no-data_hide {
+ display: none;
+}
+@media (max-width: 1025px) {
+  .results__content {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 615px) {
+  .results__content {
+    padding: 32px 16px;
+  }
+}

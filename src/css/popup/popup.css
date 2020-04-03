@@ -1,0 +1,19 @@
+@import url("__content/pupop__content.css");
+@import url("__input/popup__input.css");
+@import url("__button/popup__button.css");
+@import url("__close/popup__close.css");
+@import url("__description/popup__description.css");
+@import url("__title/popup__title.css");
+@import url("__subtitle/popup__subtitle.css");
+@import url("__link/popup__link.css");
+@import url("__form/popup__form.css");
+@import url("__container-input/popup__container-input.css");
+
+
+.popup {
+  pointer-events: none;
+}
+
+.popup_open {
+  pointer-events: auto;
+}

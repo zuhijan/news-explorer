@@ -1,0 +1,44 @@
+@import url("__photo/card__photo.css");
+@import url("__block-description/card__block-description.css");
+@import url("__icon/card__icon.css");
+@import url("__data/card__data.css");
+@import url("__title/card__title.css");
+@import url("__description/card__description.css");
+@import url("__source/card__source.css");
+@import url("__key/card__key.css");
+@import url("__auto/card__auto.css");
+
+
+.card {
+  position: relative;
+  width: 400px;
+  height: 576px;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0px 1px 10px rgba(8, 29, 45, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.card:hover {
+  box-shadow: 0px 10px 20px rgba(8, 29, 45, 0.1);
+}
+
+
+
+
+@media (max-width: 890px) {
+  .card {
+    width: 224px;
+    height: 420px;
+
+  }
+}
+
+@media (max-width: 515px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+}

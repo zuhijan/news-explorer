@@ -1,0 +1,18 @@
+.saved__info-container {
+  max-width: 1232px;
+  min-width: 288px;
+  margin: 0 auto;
+  padding: 40px 104px;
+}
+
+@media (max-width: 1025px) {
+  .saved__info-container {
+    padding: 24px 40px 32px;
+  }
+}
+
+@media (max-width: 615px) {
+  .saved__info-container  {
+    padding: 10px 16px 30px;
+  }
+}

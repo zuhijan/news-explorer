@@ -1,0 +1,18 @@
+@import url("__title/search__title.css");
+@import url("__subtitle/search__subtitle.css");
+@import url("__container-input/search__container-input.css");
+@import url("__input/search__input.css");
+@import url("__button/search__button.css");
+
+.search {
+  max-width: 1408px;
+  min-width: 288px;
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 30px 16px;
+}
