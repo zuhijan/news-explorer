@@ -2,9 +2,9 @@
 
 ## для проекта [news-explorer](http://news-explorer.ru/)
 
-DEMO: https://zuhijan.github.io/news-explorer/
-ВИДЕО: https://yadi.sk/i/VBSLZNc9vxDNiQ
-Полный функционал доступен при развертывании локально. 
+- DEMO: https://zuhijan.github.io/news-explorer/
+- ВИДЕО: https://yadi.sk/i/VBSLZNc9vxDNiQ
+- Полный функционал доступен при развертывании локально. 
 Backend код этого проекта: https://github.com/zuhijan/news-exlorer-api
 
 
